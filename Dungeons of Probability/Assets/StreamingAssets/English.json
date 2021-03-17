@@ -1,0 +1,149 @@
+{
+    "items": [
+        {
+            "key": "null",
+            "value": ""
+        },
+        {
+            "key": "Play",
+            "value": "Play"
+        },
+        {
+            "key": "Continue",
+            "value": "Continue"
+        },
+        {
+            "key": "Repeat",
+            "value": "Repeat"
+        },
+        {
+            "key": "Intro_1",
+            "value": "Impudent mortal! So you are here at last!"
+        },
+        {
+            "key": "Intro_2",
+            "value": "Deal with all the evil tricks my minions will put upon you and get the {Spark of Intelligence}! Fail to do so and fall into [oblivion]."
+        },
+        {
+            "key": "Intro_3",
+            "value": "Let us begin!"
+        },
+        {
+            "key": "EnemyIntro_Lich",
+            "value": "Greetingsss, human! I was the mightiest of all the warriors once! Answer my questions right and I will fall."
+        },
+        {
+            "key": "EnemyTakesHit_Lich",
+            "value": "You are wise, human! The next question."
+        },
+        {
+            "key": "PlayerTakesHit_Lich",
+            "value": "Suffer the [pain], human!"
+        },
+        {
+            "key": "EnemyDefeated_Lich",
+            "value": "Arghhhhhh..."
+        },
+        {
+            "key": "PlayerDefeated_Lich",
+            "value": "You have perished. Watch video AD to come back to life."
+        },
+        {
+            "key": "PlayerTakesFinalHit_Lich",
+            "value": "Stand still! Now I small smite you down with the vicious blow!,"
+        },
+        {
+            "key": "EnemyIntro_Necromant",
+            "value": "Hail to thee, human. I sold my soul in pursuit of black arts mastery! Shall you answer all of my riddles I would collapse in shame."
+        },
+        {
+            "key": "EnemyTakesHit_Necromant",
+            "value": "Thou are correct. Let us proceed."
+        },
+        {
+            "key": "PlayerTakesHit_Necromant",
+            "value": "Suffer the [pain], human!"
+        },
+        {
+            "key": "EnemyDefeated_Necromant",
+            "value": "I collaaapppsss..."
+        },
+        {
+            "key": "PlayerDefeated_Necromant",
+            "value": "You have perished. Watch video AD to come back to life."
+        },
+        {
+            "key": "PlayerTakesFinalHit_Necromant",
+            "value": "Despair not! Even the weariest river flows somewhere safe to sea..,"
+        },
+        {
+            "key": "EnemyIntro_Megabrain",
+            "value": "Weak human, you are unlikely to answer MY questions, for I am the great Ozymouth itself."
+        },
+        {
+            "key": "EnemyTakesHit_Megabrain",
+            "value": "How can you be right? The next question!"
+        },
+        {
+            "key": "PlayerTakesHit_Megabrain",
+            "value": "Suffer the [pain], human!"
+        },
+        {
+            "key": "EnemyDefeated_Megabrain",
+            "value": "Hubschsch..."
+        },
+        {
+            "key": "PlayerDefeated_Megabrain",
+            "value": "You have perished. Watch video AD to come back to life."
+        },
+        {
+            "key": "PlayerTakesFinalHit_Megabrain",
+            "value": "Lament! Close you eyes and forget your pain...,"
+        },
+        {
+            "key": "question_text_1",
+            "value": "I may deal critical damage with Value1% chance for each strike. \n What are the chances of getting Value2 criticals in a row?"
+        },
+        {
+            "key": "question_text_2",
+            "value": "In Marshlands Value1 adventurers die by the [sword], Value2 by the [dagger] and Value3 by [stray arrows]. What is the chance to die there from the good old <melee weapon>?"
+        },
+        {
+            "key": "question_text_3",
+            "value": "Five adventurers need to defend the wood house against [goblin raiders]. One of them shall guard the door, one the rear exit, one the front door and two are needed for both windows.What is the number of possible <defending formations> if all the adventurers are equally capable of defending each point?"
+        },
+        {
+            "key": "question_text_4",
+            "value": "Each of two members of Thieves Guild may <pickpocket> the nobleman with an armored guard Value1 times out of Value2. What is the chance that at least one of them would make it out of the tavern alive?"
+        },
+        {
+            "key": "question_text_5",
+            "value": "Five adventurers need to defend the wood house against [goblin raiders]. One of them shall guard the door, one the rear exit, one the front door and two are needed for both windows.\n<br>What is the numer of possible <defending formations> if all the adventurers are equally capable of defending each point?"
+            
+        },
+        {
+            "key": "question_text_6",
+            "value": "Adventurers may cross the <woodland> afoot or astride, the <reverland> afoot, astride or by the raft and the <swampland> astride or using the underground caves. In how many ways can the party plan their <journey>?"
+        },
+        {
+            "key": "question_text_7",
+            "value": "I can [slash] you with my sword blade, [pierce] you with its edge, [stun] you with its hilt, [scratch] you with its tip or lunge and [impale] you. How many Value2-hit <combos> with different <strikes> can I perform?"
+        },
+        {
+            "key": "question_text_8",
+            "value": "A sorceress and her twin sister attack you from two sides. One with the <Icebolt spell> that may hit either you or her sister. Another with the [torch] with Value2% chance to hit. What is the chance of turning into the deeply frosen and badly burnt corpse?"
+        },
+        {
+            "key": "question_text_9",
+            "value": "Each of the crates contains Value1 <potions>. {Iron crate} contains Value2 [heal potions], Wooden crate contains only Value3,  [Blood crate] contains Value4 of these. You get a random <potion> from each of them. What is the chance of drinking 3 [heal potions]? "
+        },
+        {
+            "key": "question_text_10",
+            "value": "Elven archer got Value1 <oil arrows>, Value2 {poison arrows} and Value3 [fire arrows] in his quiver. He randomly picks them one by one and shoots at you. Elven archers are really fast and they never miss their target. What is the chance of being <oiled> and then [set afire]?"
+        },
+        {
+            "key": "question_text_11",
+            "value": "Elf, human, halfling, orc, dwarf and lizardman are held captive in my keep and are to be [sacrificed] to the Demon Lord one after another.  In how many ways can these [sacrifices] be made?"
+        }
+    ]
+}
