@@ -26,9 +26,30 @@ public class UIWriter : MonoBehaviour
         uiManager.ClickTip.gameObject.SetActive(false);
         displayText.text = "";
         writing = true;
-        foreach (char c in textToWrite[0]) 
+        bool tag = false;
+        for (int i = 0; i < textToWrite[0].Length; i++)
         {
-            displayText.text += c;
+            char symbol = textToWrite[0][i];
+            if (symbol == '<' && tag == false)
+            {
+                displayText.text += textToWrite[0].Substring(i, 15);
+                displayText.text += "</color>";
+                i += 14;
+                tag = true;
+            }
+            else if (symbol == '<' && textToWrite[0][i+1] == '/' && tag == true)
+            {
+                i += 7;
+                tag = false;
+            }
+            else if (tag)
+            {
+                displayText.text = displayText.text.Insert(displayText.text.Length - 8, symbol.ToString());
+            }
+            else
+            {
+                displayText.text += symbol;
+            }
             yield return new WaitForSeconds (0.125f);
         }
         textToWrite.RemoveAt(0);
