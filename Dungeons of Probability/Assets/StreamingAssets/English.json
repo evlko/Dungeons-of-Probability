@@ -13,6 +13,22 @@
             "value": "Continue"
         },
         {
+            "key": "NewGame",
+            "value": "New Game"
+        },
+        {
+            "key": "NewGameText",
+            "value": "Are you sure you want to start a new game?\n  The current save will be overwritten!"
+        },
+        {
+            "key": "Yes",
+            "value": "Yes"
+        },
+        {
+            "key": "No",
+            "value": "No"
+        },
+        {
             "key": "Repeat",
             "value": "Repeat"
         },

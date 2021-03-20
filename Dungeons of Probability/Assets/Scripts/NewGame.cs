@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class NewGame : MonoBehaviour
 {
+    
     public void SetData()
     {
         PlayerPrefs.SetInt("Level", 0);
