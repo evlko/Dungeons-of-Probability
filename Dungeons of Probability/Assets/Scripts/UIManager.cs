@@ -7,8 +7,6 @@ public class UIManager : MonoBehaviour
 {
     public GameManager gameManager;
     public UIWriter UIWriter;
-    public Image bottomPabel;
-    public Image panelWithText;
     public List<Image> healthsIcon;
     public Image DeathPanel;
     public Image ClickTip;
@@ -27,11 +25,6 @@ public class UIManager : MonoBehaviour
         UIWriter.AddToQueue(TranslatedText(texts));
     }
 
-    public void ChangeTextPanelStatus(bool status)
-    {
-        panelWithText.gameObject.SetActive(status);
-    }
-
     public void ReduceHealth()
     {
         healthsIcon[healthsIcon.Count-1].gameObject.SetActive(false);
@@ -41,7 +34,7 @@ public class UIManager : MonoBehaviour
     public void Fail()
     {
         DeathPanel.gameObject.SetActive(true);
-        bottomPabel.gameObject.SetActive(false);
+        //bottomPabel.gameObject.SetActive(false);
     }
 
     List<string> TranslatedText(List<string> keys)

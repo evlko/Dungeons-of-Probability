@@ -9,14 +9,14 @@ public class GameManager : MonoBehaviour
     public int level = 1;
     public int healths = 3;
     public List<string> introPhrases;
-    public bool inFight = false;
     public string currentEnemy = "";
     public int currentEnemyNumber;
     public int currentEnemyHealth = 3;
     public GameObject currentEnemySprite;
     public List<string> enemyPhrases;
     public bool nextBattle = true;
-    
+    public List<Animator> Animators;
+
     public UIManager UIManager;
     public EnemiesPool enemiesPool;
     public QuestionGenerator QuestionGenerator;
@@ -76,6 +76,7 @@ public class GameManager : MonoBehaviour
             UIManager.DisplayText(enemyPhrases.GetRange(3, 1));
             nextBattle = true;
         }
+        ChangeAnswersButtonsStatus(false);
     }
 
     public void IncorrectAnswer()
@@ -92,6 +93,7 @@ public class GameManager : MonoBehaviour
         {
             UIManager.DisplayText(enemyPhrases.GetRange(4, 2));
         }
+        ChangeAnswersButtonsStatus(false);
     }
 
     void GenerateEnemyPhrases()
@@ -103,5 +105,13 @@ public class GameManager : MonoBehaviour
         enemyPhrases.Add("EnemyDefeated_" + currentEnemy); // 3
         enemyPhrases.Add("PlayerTakesFinalHit_" + currentEnemy); // 4
         enemyPhrases.Add("PlayerDefeated_" + currentEnemy); // 5
+    }
+
+    public void ChangeAnswersButtonsStatus(bool status)
+    {
+        for (int i = 0; i < Animators.Count; i++)
+        {
+            Animators[i].SetBool("Show", status);
+        }
     }
 }

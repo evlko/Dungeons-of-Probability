@@ -16,7 +16,6 @@ public class UIWriter : MonoBehaviour
         textToWrite.AddRange(texts);
         if (textToWrite.Count - texts.Count == 0)
         {
-            uiManager.ChangeTextPanelStatus(true);
             StartCoroutine ("PlayText");
         }
     }
@@ -71,7 +70,8 @@ public class UIWriter : MonoBehaviour
                     }
                     else
                     {
-                        uiManager.ChangeTextPanelStatus(false);
+                        uiManager.ClickTip.gameObject.SetActive(false);
+                        gameManager.ChangeAnswersButtonsStatus(true);
                     }
                 }
                 else
