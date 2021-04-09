@@ -76,12 +76,14 @@ public class GameManager : MonoBehaviour
             UIManager.DisplayText(enemyPhrases.GetRange(3, 1));
             nextBattle = true;
         }
+        currentEnemySprite.GetComponent<Animator>().SetTrigger("Hit");
         ChangeAnswersButtonsStatus(false);
     }
 
     public void IncorrectAnswer()
     {
         healths -= 1;
+        gameObject.GetComponent<Animator>().SetTrigger("Hit");
         UIManager.ReduceHealth();
         if (healths > 0)
         {
