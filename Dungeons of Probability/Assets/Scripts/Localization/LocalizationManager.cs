@@ -93,12 +93,12 @@ public class LocalizationManager : MonoBehaviour {
 			for (int i = 0; i < loadedData.items.Length; i++)
 			{
 				// Blue color:
-				string value = loadedData.items[i].value.Replace(">", "/color>").Replace("<", "<color=#01579B>");
+				string value = loadedData.items[i].value.Replace(">", "/color>").Replace("<", "<color=#0091EA>");
 				value = value.Replace("/c", "</c");
 				// Red color:
-				value = value.Replace("]", "</color>").Replace("[", "<color=#B71C1C>");
+				value = value.Replace("]", "</color>").Replace("[", "<color=#D50000>");
 				// Yellow color:
-				value = value.Replace("}", "</color>").Replace("{", "<color=#F57F17>");
+				value = value.Replace("}", "</color>").Replace("{", "<color=#FFAB00>");
 				localizedText.Add(loadedData.items[i].key, value);
 			}
 		}
