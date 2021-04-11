@@ -9,6 +9,7 @@ public class EnemiesPool : MonoBehaviour
     {
         public string enemyName;
         public Sprite enemySprite;
+        public float enemyHeathPosition;
     }
     
     public EnemiesList[] Enemies;

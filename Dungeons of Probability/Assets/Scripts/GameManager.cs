@@ -58,6 +58,9 @@ public class GameManager : MonoBehaviour
         currentEnemy = enemiesPool.Enemies[currentEnemyNumber].enemyName;
         currentEnemySprite.gameObject.GetComponent<SpriteRenderer>().sprite = enemiesPool.Enemies[currentEnemyNumber].enemySprite;
         currentEnemyHealth = PlayerPrefs.GetInt("EnemyHealths");
+        EnemyHealthBar enemyHealthBar = currentEnemySprite.GetComponent<EnemyHealthBar>();
+        enemyHealthBar.ResetHealthBar();
+        enemyHealthBar.ChangePosition(enemiesPool.Enemies[currentEnemyNumber].enemyHeathPosition);
         nextBattle = false;
         GenerateEnemyPhrases();
     }
@@ -65,6 +68,8 @@ public class GameManager : MonoBehaviour
     public void CorrectAnswer()
     {
         currentEnemyHealth -= 1;
+        print(currentEnemyHealth);
+        StartCoroutine(currentEnemySprite.GetComponent<EnemyHealthBar>().ScaleObject(currentEnemyHealth*11, 1));
         if (currentEnemyHealth > 0)
         {
             PlayerPrefs.SetInt("EnemyHealths", currentEnemyHealth);
