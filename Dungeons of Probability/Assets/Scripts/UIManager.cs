@@ -17,8 +17,7 @@ public class UIManager : MonoBehaviour
         {
             ReduceHealth();
         }
-
-}
+    }
     
     public void DisplayText(List<string> texts)
     {
@@ -34,7 +33,6 @@ public class UIManager : MonoBehaviour
     public void Fail()
     {
         DeathPanel.gameObject.SetActive(true);
-        //bottomPabel.gameObject.SetActive(false);
     }
 
     List<string> TranslatedText(List<string> keys)

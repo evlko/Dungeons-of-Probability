@@ -17,10 +17,9 @@ public class EnemyHealthBar : MonoBehaviour
         healthBarTransform.transform.localPosition = new Vector3 (0, pos, 0); 
     }
 
-    public void ResetHealthBar(){
-        StopAllCoroutines();
+    public void SetHealthBar(int health){
         Transform healthLevelTransform = healthLevel.GetComponent<Transform>();    
-        healthLevelTransform.transform.localScale = new Vector3 (33, 1, 1);
+        healthLevelTransform.transform.localScale = new Vector3 (11*health, 1, 1);
     }
 
     public IEnumerator ScaleObject(float scale, float duration)
