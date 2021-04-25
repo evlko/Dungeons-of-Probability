@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public string currentEnemy = "";
     public int currentEnemyNumber;
     public int currentEnemyHealth = 3;
-    public GameObject currentEnemySprite;
+    public GameObject Enemy;
     public List<string> enemyPhrases;
     public bool nextBattle = true;
     public List<Animator> Animators;
@@ -56,10 +56,11 @@ public class GameManager : MonoBehaviour
     void SetEnemyData()
     {
         currentEnemy = enemiesPool.Enemies[currentEnemyNumber].enemyName;
-        currentEnemySprite.gameObject.GetComponent<SpriteRenderer>().sprite = enemiesPool.Enemies[currentEnemyNumber].enemySprite;
+        Enemy.gameObject.GetComponent<SpriteRenderer>().sprite = enemiesPool.Enemies[currentEnemyNumber].enemySprite;
         currentEnemyHealth = PlayerPrefs.GetInt("EnemyHealths");
-        EnemyHealthBar enemyHealthBar = currentEnemySprite.GetComponent<EnemyHealthBar>();
+        EnemyHealthBar enemyHealthBar = Enemy.GetComponent<EnemyHealthBar>();
         StopAllCoroutines();
+        enemyHealthBar.SetStatus(true);
         enemyHealthBar.SetHealthBar(currentEnemyHealth);
         enemyHealthBar.ChangePosition(enemiesPool.Enemies[currentEnemyNumber].enemyHeathPosition);
         nextBattle = false;
@@ -69,7 +70,7 @@ public class GameManager : MonoBehaviour
     public void CorrectAnswer()
     {
         currentEnemyHealth -= 1;
-        StartCoroutine(currentEnemySprite.GetComponent<EnemyHealthBar>().ScaleObject(currentEnemyHealth*11, 1));
+        StartCoroutine(Enemy.GetComponent<EnemyHealthBar>().ScaleObject(currentEnemyHealth*11, 1));
         if (currentEnemyHealth > 0)
         {
             PlayerPrefs.SetInt("EnemyHealths", currentEnemyHealth);
@@ -79,9 +80,8 @@ public class GameManager : MonoBehaviour
         else
         {
             UIManager.DisplayText(enemyPhrases.GetRange(3, 1));
-            nextBattle = true;
         }
-        currentEnemySprite.GetComponent<Animator>().SetTrigger("Hit");
+        Enemy.GetComponent<Animator>().SetTrigger("Hit");
         ChangeAnswersButtonsStatus(false);
     }
 

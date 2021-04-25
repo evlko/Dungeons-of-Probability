@@ -12,6 +12,10 @@ public class EnemyHealthBar : MonoBehaviour
         
     }
 
+    public void SetStatus(bool status){
+        healthBar.SetActive(status);
+    }
+
     public void ChangePosition(float pos){
         Transform healthBarTransform = healthBar.GetComponent<Transform>();    
         healthBarTransform.transform.localPosition = new Vector3 (0, pos, 0); 

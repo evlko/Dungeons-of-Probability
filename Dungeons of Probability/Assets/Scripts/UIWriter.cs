@@ -7,6 +7,7 @@ public class UIWriter : MonoBehaviour
 {
     public UIManager uiManager;
     public GameManager gameManager;
+    public MoveCamera moveCamera;
     public Text displayText;
     public List<string> textToWrite;
     public bool writing = false;
@@ -76,7 +77,7 @@ public class UIWriter : MonoBehaviour
                 }
                 else
                 {
-                    gameManager.BeginFight();
+                    moveCamera.Move();
                 }
             }
             else
