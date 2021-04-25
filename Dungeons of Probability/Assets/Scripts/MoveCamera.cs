@@ -27,7 +27,6 @@ public class MoveCamera : MonoBehaviour
     bool moving = false;
     bool rotating = false;
     float angelsToRotate = 0;
-    float angelsToRotateCheck = 0;
     GameManager gameManager;
     Vector3 angles;
     // Start is called before the first frame update
@@ -48,14 +47,14 @@ public class MoveCamera : MonoBehaviour
         else if (rotating == true){
             if(angelsToRotate < 0){
                 angles.y -= 1.5f;
-                angelsToRotateCheck -= 1.5f;
+                angelsToRotate += 1.5f;
             }
             else{
                 angles.y += 1.5f;
-                angelsToRotateCheck += 1.5f;
+                angelsToRotate -= 1.5f;
             }
             gameObject.transform.rotation = Quaternion.Euler(angles);
-            if(angelsToRotateCheck == angelsToRotate){
+            if(angelsToRotate == 0){
                 rotating = false;
                 Move();
             }
@@ -92,6 +91,5 @@ public class MoveCamera : MonoBehaviour
         angles = transform.rotation.eulerAngles;
         rotating = true;
         angelsToRotate = newAngels;
-        angelsToRotateCheck = 0;
     }
 }
