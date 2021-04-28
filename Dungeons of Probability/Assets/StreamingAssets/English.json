@@ -17,6 +17,14 @@
             "value": "New Game"
         },
         {
+            "key": "Restart",
+            "value": "Restart"
+        },
+        {
+            "key": "MainMenu",
+            "value": "Main Menu"
+        },
+        {
             "key": "NewGameText",
             "value": "Are you sure you want to start a new game?\n  The current save will be overwritten!"
         },
@@ -31,6 +39,42 @@
         {
             "key": "Repeat",
             "value": "Repeat"
+        },
+        {
+            "key": "LanguageTip",
+            "value": "Attention! Changing the language will take a few seconds!"
+        },
+        {
+            "key": "Fail",
+            "value": "You failed!"
+        },
+        {
+            "key": "Pause",
+            "value": "Pause?"
+        },
+        {
+            "key": "Pause_phrase_1",
+            "value": "What are you doing here? Go play."
+        },
+        {
+            "key": "Pause_phrase_2",
+            "value": "Coffee won't help you."
+        },
+        {
+            "key": "Pause_phrase_3",
+            "value": "Do you pause match-3 as well?"
+        },
+        {
+            "key": "Fail_phrase_1",
+            "value": "Dam, and you still have an interview to pass."
+        },
+        {
+            "key": "Fail_phrase_2",
+            "value": "Are you sure you want to be a game designer?"
+        },
+        {
+            "key": "Fail_phrase_3",
+            "value": "These tasks are from the USSR kindergarten.."
         },
         {
             "key": "Intro_1",

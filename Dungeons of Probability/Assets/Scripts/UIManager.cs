@@ -10,6 +10,8 @@ public class UIManager : MonoBehaviour
     public List<Image> healthsIcon;
     public Image DeathPanel;
     public Image ClickTip;
+    public Image BottomPanel;
+    public Image HitEffectPanel;
 
     void Start()
     {
@@ -28,11 +30,13 @@ public class UIManager : MonoBehaviour
     {
         healthsIcon[healthsIcon.Count-1].gameObject.SetActive(false);
         healthsIcon.RemoveAt(healthsIcon.Count-1);
+        StartCoroutine(HitEffectPlay(0.5f));
     }
 
     public void Fail()
     {
         DeathPanel.gameObject.SetActive(true);
+        DeathPanel.gameObject.GetComponent<RandomPhrase>().GeneratePhrase();
     }
 
     List<string> TranslatedText(List<string> keys)
@@ -43,5 +47,14 @@ public class UIManager : MonoBehaviour
             translatedText.Add(LocalizationManager.instance.GetLocalizedValue(keys[i]));
         }
         return translatedText;
+    }
+
+    IEnumerator HitEffectPlay(float waitTime)
+    {
+        BottomPanel.gameObject.SetActive(false);
+        HitEffectPanel.gameObject.SetActive(true);
+        yield return new WaitForSeconds(waitTime);
+        BottomPanel.gameObject.SetActive(true);
+        HitEffectPanel.gameObject.SetActive(false);
     }
 }

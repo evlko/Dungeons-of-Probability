@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public UIManager UIManager;
     public EnemiesPool enemiesPool;
     public QuestionGenerator QuestionGenerator;
+    public Transform extraAnswerButton;
     
     void Start()
     {
@@ -39,11 +40,18 @@ public class GameManager : MonoBehaviour
             }
             QuestionGenerator.GenerateQuestion();
         }
+
+        if (level == 3){
+            extraAnswerButton.gameObject.SetActive(true);
+        }
     }
 
     public void BeginFight()
     {
         level += 1;
+        if (level == 3){
+            extraAnswerButton.gameObject.SetActive(true);
+        }
         PlayerPrefs.SetInt("Level", level);
         currentEnemyNumber = Random.Range(0, enemiesPool.Enemies.Length);
         PlayerPrefs.SetInt("Enemy", currentEnemyNumber);
@@ -80,6 +88,7 @@ public class GameManager : MonoBehaviour
         else
         {
             UIManager.DisplayText(enemyPhrases.GetRange(3, 1));
+            nextBattle = true;
         }
         Enemy.GetComponent<Animator>().SetTrigger("Hit");
         ChangeAnswersButtonsStatus(false);
@@ -88,7 +97,6 @@ public class GameManager : MonoBehaviour
     public void IncorrectAnswer()
     {
         healths -= 1;
-        gameObject.GetComponent<Animator>().SetTrigger("Hit");
         UIManager.ReduceHealth();
         if (healths > 0)
         {
@@ -116,7 +124,11 @@ public class GameManager : MonoBehaviour
 
     public void ChangeAnswersButtonsStatus(bool status)
     {
-        for (int i = 0; i < Animators.Count; i++)
+        int count = 3;
+        if (level == 3){
+            count += 1;
+        }
+        for (int i = 0; i < count; i++)
         {
             Animators[i].SetBool("Show", status);
         }
