@@ -15,7 +15,7 @@ public class RandomPhrase : MonoBehaviour
     }
 
     public void GeneratePhrase(){
-        int number = Random.Range(0, keysCount);
+        int number = Random.Range(1, keysCount+1);
         string new_key = key + "_" + number.ToString();
         textDisplay.text = LocalizationManager.instance.GetLocalizedValue(new_key);
     }
