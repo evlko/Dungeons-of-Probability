@@ -77,6 +77,7 @@ public class UIWriter : MonoBehaviour
                 }
                 else
                 {
+                    gameManager.EnemyDefeated();
                     moveCamera.Move();
                 }
             }

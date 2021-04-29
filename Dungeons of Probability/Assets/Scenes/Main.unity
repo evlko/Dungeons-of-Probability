@@ -4795,16 +4795,22 @@ MonoBehaviour:
   points:
   - point: {fileID: 643392301}
     pointStatus: 0
+    cameraRotation: 0
   - point: {fileID: 1689590061}
     pointStatus: 0
+    cameraRotation: 0
   - point: {fileID: 156189489}
     pointStatus: 1
+    cameraRotation: 0
   - point: {fileID: 817588404}
     pointStatus: 0
+    cameraRotation: 90
   - point: {fileID: 385131803}
     pointStatus: 2
+    cameraRotation: 90
   - point: {fileID: 1366373101}
     pointStatus: 0
+    cameraRotation: 0
 --- !u!1 &523887684
 GameObject:
   m_ObjectHideFlags: 0

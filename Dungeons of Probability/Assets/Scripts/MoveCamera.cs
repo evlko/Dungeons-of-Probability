@@ -18,6 +18,7 @@ public class MoveCamera : MonoBehaviour
     public struct Points{
         public Transform point;
         public PointStatus pointStatus;
+        public float cameraRotation;
     }
 
     [SerializeField]
@@ -33,7 +34,16 @@ public class MoveCamera : MonoBehaviour
     void Start()
     {
         gameManager = GetComponent<GameManager>();
+        currentPoint = PlayerPrefs.GetInt("CameraPoint");
         movePoint = points[currentPoint].point;
+        MoveToCurrentPoint();
+    }
+
+    void MoveToCurrentPoint(){
+        transform.position = new Vector3(points[currentPoint].point.position.x, points[currentPoint].point.position.y, points[currentPoint].point.position.z);
+        Vector3 p = transform.eulerAngles;
+        p.y = points[currentPoint].cameraRotation;
+        transform.eulerAngles = p;
     }
 
     // Update is called once per frame
@@ -81,6 +91,7 @@ public class MoveCamera : MonoBehaviour
     public void Move(){
         if(moving == false){
             currentPoint = currentPoint + 1;
+            PlayerPrefs.SetInt("CameraPoint", currentPoint);
             enemy.gameObject.SetActive(false);
             movePoint = points[currentPoint].point;
             moving = true;

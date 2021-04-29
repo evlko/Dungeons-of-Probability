@@ -11,5 +11,6 @@ public class NewGame : MonoBehaviour
         PlayerPrefs.SetInt("Healths", 3);
         PlayerPrefs.SetInt("EnemyHealths", 3);
         PlayerPrefsX.SetIntArray("Questions", new int[11]);
+        PlayerPrefs.SetInt("CameraPoint", 0);
     }
 }

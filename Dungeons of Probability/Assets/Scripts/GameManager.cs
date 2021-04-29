@@ -46,19 +46,20 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void BeginFight()
-    {
-        level += 1;
+    public void BeginFight(){
         if (level == 3){
             extraAnswerButton.gameObject.SetActive(true);
         }
-        PlayerPrefs.SetInt("Level", level);
         currentEnemyNumber = Random.Range(0, enemiesPool.Enemies.Length);
-        PlayerPrefs.SetInt("Enemy", currentEnemyNumber);
-        PlayerPrefs.SetInt("EnemyHealths", 3);
         SetEnemyData();
         UIManager.DisplayText(enemyPhrases.GetRange(0, 1));
         QuestionGenerator.GenerateQuestion();
+    }
+
+    public void EnemyDefeated(){
+        level += 1;
+        PlayerPrefs.SetInt("Level", level);
+        PlayerPrefs.SetInt("EnemyHealths", 3);
     }
 
     void SetEnemyData()
@@ -88,6 +89,8 @@ public class GameManager : MonoBehaviour
         else
         {
             UIManager.DisplayText(enemyPhrases.GetRange(3, 1));
+            EnemyHealthBar enemyHealthBar = Enemy.GetComponent<EnemyHealthBar>();
+            enemyHealthBar.SetStatus(false);
             nextBattle = true;
         }
         Enemy.GetComponent<Animator>().SetTrigger("Hit");
@@ -97,7 +100,7 @@ public class GameManager : MonoBehaviour
     public void IncorrectAnswer()
     {
         healths -= 1;
-        UIManager.ReduceHealth();
+        UIManager.ReduceHealth(true);
         if (healths > 0)
         {
             PlayerPrefs.SetInt("Healths", healths);

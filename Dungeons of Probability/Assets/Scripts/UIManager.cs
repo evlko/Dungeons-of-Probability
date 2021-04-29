@@ -17,7 +17,7 @@ public class UIManager : MonoBehaviour
     {
         for (int i = 0; i < 3 - PlayerPrefs.GetInt("Healths"); i++)
         {
-            ReduceHealth();
+            ReduceHealth(false);
         }
     }
     
@@ -26,11 +26,13 @@ public class UIManager : MonoBehaviour
         UIWriter.AddToQueue(TranslatedText(texts));
     }
 
-    public void ReduceHealth()
+    public void ReduceHealth(bool anim)
     {
         healthsIcon[healthsIcon.Count-1].gameObject.SetActive(false);
         healthsIcon.RemoveAt(healthsIcon.Count-1);
-        StartCoroutine(HitEffectPlay(0.5f));
+        if(anim == true){
+            StartCoroutine(HitEffectPlay(0.5f));
+        }
     }
 
     public void Fail()
