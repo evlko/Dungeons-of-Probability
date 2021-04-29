@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour
             extraAnswerButton.gameObject.SetActive(true);
         }
         currentEnemyNumber = Random.Range(0, enemiesPool.Enemies.Length);
+        PlayerPrefs.SetInt("Enemy", currentEnemyNumber);
         SetEnemyData();
         UIManager.DisplayText(enemyPhrases.GetRange(0, 1));
         QuestionGenerator.GenerateQuestion();
