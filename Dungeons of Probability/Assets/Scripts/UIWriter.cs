@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UIWriter : MonoBehaviour
 {
     public UIManager uiManager;
     public GameManager gameManager;
     public MoveCamera moveCamera;
-    public Text displayText;
+    public TextMeshProUGUI displayText;
     public List<string> textToWrite;
     public bool writing = false;
 
