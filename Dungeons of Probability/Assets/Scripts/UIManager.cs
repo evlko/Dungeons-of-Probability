@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     public UIWriter UIWriter;
     public List<Image> healthsIcon;
     public Image DeathPanel;
+    public Image WinPanel;
     public Image ClickTip;
     public Image BottomPanel;
     public Image HitEffectPanel;
@@ -39,6 +40,10 @@ public class UIManager : MonoBehaviour
     {
         DeathPanel.gameObject.SetActive(true);
         DeathPanel.gameObject.GetComponent<RandomPhrase>().GeneratePhrase();
+    }
+
+    public void Win(){
+        WinPanel.gameObject.SetActive(true);
     }
 
     List<string> TranslatedText(List<string> keys)

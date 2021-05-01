@@ -49,6 +49,10 @@
             "value": "You failed!"
         },
         {
+            "key": "Win",
+            "value": "Thanks for playing!\nWe hope you enjoyed it and someday you will come back."
+        },
+        {
             "key": "Pause",
             "value": "Pause?"
         },
