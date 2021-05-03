@@ -5215,6 +5215,7 @@ GameObject:
   - component: {fileID: 519420036}
   - component: {fileID: 519420037}
   - component: {fileID: 519420039}
+  - component: {fileID: 519420038}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5442,6 +5443,18 @@ MonoBehaviour:
   customColor_8: {r: 0.11764706, g: 0.11764706, b: 0.11764706, a: 1}
   customShadowColor: {r: 0.49056602, g: 0.45122817, b: 0.45122817, a: 1}
   shadowTolerance: 0.05
+--- !u!114 &519420038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e4e0e11d34b547718608345b3742699, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &519420039
 MonoBehaviour:
   m_ObjectHideFlags: 0
