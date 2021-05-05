@@ -15,7 +15,8 @@ public class GameManager : MonoBehaviour
     public GameObject Enemy;
     public List<string> enemyPhrases;
     public bool nextBattle = true;
-    public List<Animator> Animators;
+    //public List<Animator> Animators;
+    public List<Transform> AnswerButtons;
 
     public UIManager UIManager;
     public EnemiesPool enemiesPool;
@@ -134,7 +135,7 @@ public class GameManager : MonoBehaviour
         }
         for (int i = 0; i < count; i++)
         {
-            Animators[i].SetBool("Show", status);
+            AnswerButtons[i].gameObject.SetActive(status);
         }
     }
 }

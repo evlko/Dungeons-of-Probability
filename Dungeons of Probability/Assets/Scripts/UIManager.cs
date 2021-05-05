@@ -11,7 +11,6 @@ public class UIManager : MonoBehaviour
     public Image DeathPanel;
     public Image WinPanel;
     public Image ClickTip;
-    public Image BottomPanel;
     public Image HitEffectPanel;
 
     void Start()
@@ -58,10 +57,8 @@ public class UIManager : MonoBehaviour
 
     IEnumerator HitEffectPlay(float waitTime)
     {
-        BottomPanel.gameObject.SetActive(false);
         HitEffectPanel.gameObject.SetActive(true);
         yield return new WaitForSeconds(waitTime);
-        BottomPanel.gameObject.SetActive(true);
         HitEffectPanel.gameObject.SetActive(false);
     }
 }

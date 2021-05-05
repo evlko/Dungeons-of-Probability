@@ -74,7 +74,6 @@ public class MoveCamera : MonoBehaviour
             moving = false;
             switch(points[currentPoint].pointStatus){
                 case PointStatus.battle:
-                    GetComponent<UIManager>().BottomPanel.gameObject.SetActive(true);
                     enemy.gameObject.SetActive(true);
                     gameManager.nextBattle = true;
                     gameManager.BeginFight();
@@ -91,7 +90,6 @@ public class MoveCamera : MonoBehaviour
 
     public void Move(){
         if(moving == false){
-            GetComponent<UIManager>().BottomPanel.gameObject.SetActive(false);
             currentPoint = currentPoint + 1;
             PlayerPrefs.SetInt("CameraPoint", currentPoint);
             enemy.gameObject.SetActive(false);
