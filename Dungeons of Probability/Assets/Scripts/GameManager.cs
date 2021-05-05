@@ -15,13 +15,10 @@ public class GameManager : MonoBehaviour
     public GameObject Enemy;
     public List<string> enemyPhrases;
     public bool nextBattle = true;
-    //public List<Animator> Animators;
     public List<Transform> AnswerButtons;
-
     public UIManager UIManager;
     public EnemiesPool enemiesPool;
     public QuestionGenerator QuestionGenerator;
-    public Transform extraAnswerButton;
     
     void Start()
     {
@@ -41,20 +38,14 @@ public class GameManager : MonoBehaviour
             }
             QuestionGenerator.GenerateQuestion();
         }
-
-        if (level == 3){
-            extraAnswerButton.gameObject.SetActive(true);
-        }
     }
 
     public void BeginFight(){
-        if (level == 3){
-            extraAnswerButton.gameObject.SetActive(true);
-        }
         currentEnemyNumber = Random.Range(0, enemiesPool.Enemies.Length);
         PlayerPrefs.SetInt("Enemy", currentEnemyNumber);
         SetEnemyData();
         UIManager.DisplayText(enemyPhrases.GetRange(0, 1));
+        UIManager.SetHeroesStatus(true);
         QuestionGenerator.GenerateQuestion();
     }
 
@@ -96,6 +87,7 @@ public class GameManager : MonoBehaviour
             nextBattle = true;
         }
         Enemy.GetComponent<Animator>().SetTrigger("Hit");
+        UIManager.SetHeroesStatus(true);
         ChangeAnswersButtonsStatus(false);
     }
 
@@ -113,6 +105,7 @@ public class GameManager : MonoBehaviour
         {
             UIManager.DisplayText(enemyPhrases.GetRange(4, 2));
         }
+        UIManager.SetHeroesStatus(true);
         ChangeAnswersButtonsStatus(false);
     }
 

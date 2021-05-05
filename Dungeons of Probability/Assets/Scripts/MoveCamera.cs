@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MoveCamera : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class MoveCamera : MonoBehaviour
         battle,
         rotateRight,
         rotateLeft,
+        end
     };
 
     [Serializable]
@@ -29,11 +31,13 @@ public class MoveCamera : MonoBehaviour
     bool rotating = false;
     float angelsToRotate = 0;
     GameManager gameManager;
+    UIManager uiManager;
     Vector3 angles;
     // Start is called before the first frame update
     void Start()
     {
         gameManager = GetComponent<GameManager>();
+        uiManager = GetComponent<UIManager>();
         currentPoint = PlayerPrefs.GetInt("CameraPoint");
         movePoint = points[currentPoint].point;
         MoveToCurrentPoint();
@@ -77,6 +81,7 @@ public class MoveCamera : MonoBehaviour
                     enemy.gameObject.SetActive(true);
                     gameManager.nextBattle = true;
                     gameManager.BeginFight();
+                    uiManager.DialogueButton.GetComponent<Button>().interactable = true;
                     break;
                 case PointStatus.rotateLeft:
                     Rotate(-90f);
@@ -84,12 +89,16 @@ public class MoveCamera : MonoBehaviour
                 case PointStatus.rotateRight:
                     Rotate(90f);
                     break;
+                case PointStatus.end:
+                    uiManager.Win();
+                    break;
             }
         }
     }
 
     public void Move(){
         if(moving == false){
+            uiManager.DialogueButton.GetComponent<Button>().interactable = false;
             currentPoint = currentPoint + 1;
             PlayerPrefs.SetInt("CameraPoint", currentPoint);
             enemy.gameObject.SetActive(false);

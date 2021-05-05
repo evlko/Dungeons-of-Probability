@@ -61,9 +61,9 @@ public class QuestionGenerator : MonoBehaviour
             case 1:
                 values[0] = Random.Range(3, 7) * 10;
                 values[1] = Random.Range(2, 4);
-                values[4] = (float) (Math.Pow(values[0], values[1]) / Math.Pow(100, values[1]));
-                values[5] = values[0] / 100 * values[1];
-                values[6] = values[4] * 10;
+                values[4] = (float) (Math.Pow(values[0], values[1]) / Math.Pow(100, values[1]-1));
+                values[5] = values[4] / 10;
+                values[6] = values[4] * 2;
                 values[7] = 1f;
                 break;
             case 2:

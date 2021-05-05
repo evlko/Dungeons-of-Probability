@@ -12,6 +12,8 @@ public class UIManager : MonoBehaviour
     public Image WinPanel;
     public Image ClickTip;
     public Image HitEffectPanel;
+    public List<Image> HeroesPics;
+    public Button DialogueButton;
 
     void Start()
     {
@@ -43,6 +45,18 @@ public class UIManager : MonoBehaviour
 
     public void Win(){
         WinPanel.gameObject.SetActive(true);
+    }
+
+    public void SetHeroesStatus(bool status){
+        int count = 3;
+        int level = PlayerPrefs.GetInt("Level");
+        if (level >= 3){
+            count += 1;
+        }
+        for (int i = 0; i < count; i++)
+        {
+            HeroesPics[i].gameObject.SetActive(status);
+        }
     }
 
     List<string> TranslatedText(List<string> keys)

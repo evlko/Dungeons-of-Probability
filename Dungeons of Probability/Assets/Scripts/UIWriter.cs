@@ -73,6 +73,7 @@ public class UIWriter : MonoBehaviour
                     else
                     {
                         uiManager.ClickTip.gameObject.SetActive(false);
+                        uiManager.SetHeroesStatus(false);
                         gameManager.ChangeAnswersButtonsStatus(true);
                     }
                 }

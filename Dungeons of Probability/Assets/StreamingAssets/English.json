@@ -174,7 +174,7 @@
         },
         {
             "key": "question_text_3",
-            "value": "Five adventurers need to defend the wood house against [goblin raiders]. One of them shall guard the door, one the rear exit, one the front door and two are needed for both windows.What is the number of possible <defending formations> if all the adventurers are equally capable of defending each point?"
+            "value": "In Marshlands Value1 adventurers die by the [sword], Value2 by the [dagger] and Value3 by [stray arrows]. What is the chance to die there from the good old <melee weapon>?"
         },
         {
             "key": "question_text_4",
@@ -182,7 +182,7 @@
         },
         {
             "key": "question_text_5",
-            "value": "Five adventurers need to defend the wood house against [goblin raiders]. One of them shall guard the door, one the rear exit, one the front door and two are needed for both windows.\n<br>What is the numer of possible <defending formations> if all the adventurers are equally capable of defending each point?"
+            "value": "Five adventurers need to defend the wood house against [goblin raiders]. One of them shall guard the door, one the rear exit, one the front door and two are needed for both windows.\nWhat is the numer of possible <defending formations> if all the adventurers are equally capable of defending each point?"
             
         },
         {
