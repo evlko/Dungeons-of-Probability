@@ -21,6 +21,10 @@
             "value": "Переиграть"
         },
         {
+            "key": "Level",
+            "value": "Уровень: "
+        },
+        {
             "key": "MainMenu",
             "value": "Меню"
         },

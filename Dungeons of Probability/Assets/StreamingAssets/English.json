@@ -21,6 +21,10 @@
             "value": "Restart"
         },
         {
+            "key": "Level",
+            "value": "Level: "
+        },
+        {
             "key": "MainMenu",
             "value": "Main Menu"
         },
