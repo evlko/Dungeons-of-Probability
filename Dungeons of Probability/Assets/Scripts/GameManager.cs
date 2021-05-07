@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public int currentEnemyNumber;
     public int currentEnemyHealth = 3;
     public GameObject Enemy;
+    public GameObject EnemyShadow;
     public List<string> enemyPhrases;
     public bool nextBattle = true;
     public List<Transform> AnswerButtons;
@@ -65,6 +66,8 @@ public class GameManager : MonoBehaviour
         enemyHealthBar.SetStatus(true);
         enemyHealthBar.SetHealthBar(currentEnemyHealth);
         enemyHealthBar.ChangePosition(enemiesPool.Enemies[currentEnemyNumber].enemyHeathPosition);
+        float enemyShadowSize = enemiesPool.Enemies[currentEnemyNumber].shadowSize;
+        EnemyShadow.GetComponent<Transform>().transform.localScale = new Vector3(enemyShadowSize, enemyShadowSize, 1);
         nextBattle = false;
         GenerateEnemyPhrases();
     }
