@@ -91,6 +91,7 @@ public class GameManager : MonoBehaviour
         }
         Enemy.GetComponent<Animator>().SetTrigger("Hit");
         UIManager.SetHeroesStatus(true);
+        UIManager.FingerTipsOff();
         ChangeAnswersButtonsStatus(false);
     }
 
@@ -109,6 +110,7 @@ public class GameManager : MonoBehaviour
             UIManager.DisplayText(enemyPhrases.GetRange(4, 2));
         }
         UIManager.SetHeroesStatus(true);
+        UIManager.FingerTipsOff();
         ChangeAnswersButtonsStatus(false);
     }
 

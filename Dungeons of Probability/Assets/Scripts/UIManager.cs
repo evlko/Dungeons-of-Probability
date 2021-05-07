@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour
     public List<Text> HeroesNames;
     public List<Text> HeroesLevels;
     public Button DialogueButton;
+    public Transform[] FingerTips;
 
     void Start()
     {
@@ -110,5 +111,11 @@ public class UIManager : MonoBehaviour
         HitEffectPanel.gameObject.SetActive(true);
         yield return new WaitForSeconds(waitTime);
         HitEffectPanel.gameObject.SetActive(false);
+    }
+
+    public void FingerTipsOff(){
+        for (int i = 0; i < FingerTips.Length; i++){
+            FingerTips[i].gameObject.SetActive(false);
+        }
     }
 }
