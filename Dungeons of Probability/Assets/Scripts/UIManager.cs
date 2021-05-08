@@ -13,11 +13,12 @@ public class UIManager : MonoBehaviour
     public Image WinPanel;
     public Image ClickTip;
     public Image HitEffectPanel;
-    public List<Image> HeroesPics;
+    public List<Image> Heroes;
     public List<Text> HeroesNames;
     public List<Text> HeroesLevels;
     public Button DialogueButton;
     public Transform[] FingerTips;
+    public Image[] HeroesPics;
 
     void Start()
     {
@@ -27,19 +28,20 @@ public class UIManager : MonoBehaviour
 
         List<int> namesIndexes = new List<int>();
         List<int> levelsIndexes = new List<int>();
+        List<int> picsIndexes = new List<int>();
         if(PlayerPrefs.GetInt("Level") == 0){
             namesIndexes = RandomIndexes(4, heroesPool.names.Count);
             levelsIndexes = RandomIndexes(4, heroesPool.levels.Count);
+            picsIndexes = RandomIndexes(4, heroesPool.pics.Count);
             PlayerPrefsX.SetIntArray("HeroesNames", namesIndexes.ToArray());
             PlayerPrefsX.SetIntArray("HeroesLevels", levelsIndexes.ToArray());
+            PlayerPrefsX.SetIntArray("HeroesPics", picsIndexes.ToArray());
         }
         
         for (int i = 0; i < HeroesLevels.Count; i++){
             HeroesLevels[i].text = LocalizationManager.instance.GetLocalizedValue("Level") + heroesPool.levels[PlayerPrefsX.GetIntArray("HeroesLevels")[i]];
-        }
-
-        for (int i = 0; i < HeroesNames.Count; i++){
             HeroesNames[i].text = heroesPool.names[PlayerPrefsX.GetIntArray("HeroesNames")[i]];
+            HeroesPics[i].sprite = heroesPool.pics[PlayerPrefsX.GetIntArray("HeroesPics")[i]];
         }
 
         for (int i = 0; i < 3 - PlayerPrefs.GetInt("Healths"); i++)
@@ -80,7 +82,7 @@ public class UIManager : MonoBehaviour
         }
         for (int i = 0; i < count; i++)
         {
-            HeroesPics[i].gameObject.SetActive(status);
+            Heroes[i].gameObject.SetActive(status);
         }
     }
 
