@@ -71,7 +71,10 @@ public class UIManager : MonoBehaviour
     }
 
     public void Win(){
-        WinPanel.gameObject.SetActive(true);
+        List<string> texts = new List<string>();
+        texts.Add(LocalizationManager.instance.GetLocalizedValue("Win_phrase"));
+        UIWriter.AddToQueue(texts);
+        UIWriter.end = true;
     }
 
     public void SetHeroesStatus(bool status){

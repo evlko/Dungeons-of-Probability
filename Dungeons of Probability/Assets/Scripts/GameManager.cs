@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
         switch(level){
             case 1:
                 number = Random.Range(1, enemiesPool.Enemies.Length);
-                PlayerPrefs.SetInt("Enemy", number);
+                PlayerPrefs.SetInt("FirstEnemy", number);
                 Enemy.GetComponent<Animator>().SetBool("Floating", false);
                 break;
             case 2:

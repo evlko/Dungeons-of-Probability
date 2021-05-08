@@ -57,6 +57,10 @@
             "value": "Thanks for playing!\nWe hope you enjoyed it and someday you will come back."
         },
         {
+            "key": "Win_phrase",
+            "value": "Greetings! Here is your {Spark of Intelligence}, mortal! Locked in this magical chest. Wait for 2 hours for it to open or {pay} to skip the <timer>.\nWahahahahahahahaaa!"
+        },
+        {
             "key": "Pause",
             "value": "Pause?"
         },

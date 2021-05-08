@@ -12,6 +12,7 @@ public class UIWriter : MonoBehaviour
     public TextMeshProUGUI displayText;
     public List<string> textToWrite;
     public bool writing = false;
+    public bool end = false;
 
     public void AddToQueue(List<string> texts)
     {
@@ -76,6 +77,11 @@ public class UIWriter : MonoBehaviour
                         uiManager.SetHeroesStatus(false);
                         gameManager.ChangeAnswersButtonsStatus(true);
                     }
+                }
+                else if(end)
+                {
+                    uiManager.WinPanel.gameObject.SetActive(true);
+                    PlayerPrefs.SetInt("Level", 0);
                 }
                 else
                 {

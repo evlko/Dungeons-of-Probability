@@ -91,6 +91,7 @@ public class MoveCamera : MonoBehaviour
                     break;
                 case PointStatus.end:
                     uiManager.Win();
+                    uiManager.DialogueButton.GetComponent<Button>().interactable = true;
                     break;
             }
         }
