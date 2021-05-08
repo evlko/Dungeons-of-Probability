@@ -42,12 +42,33 @@ public class GameManager : MonoBehaviour
     }
 
     public void BeginFight(){
-        currentEnemyNumber = Random.Range(0, enemiesPool.Enemies.Length);
+        currentEnemyNumber = enemyNumber();
         PlayerPrefs.SetInt("Enemy", currentEnemyNumber);
         SetEnemyData();
         UIManager.DisplayText(enemyPhrases.GetRange(0, 1));
         UIManager.SetHeroesStatus(true);
         QuestionGenerator.GenerateQuestion();
+    }
+
+    int enemyNumber(){
+        int number = -1;
+        switch(level){
+            case 1:
+                number = Random.Range(1, enemiesPool.Enemies.Length);
+                PlayerPrefs.SetInt("Enemy", number);
+                break;
+            case 2:
+                number = Random.Range(1, enemiesPool.Enemies.Length);
+                int previousEnemy = PlayerPrefs.GetInt("FirstEnemy");
+                while (number == previousEnemy){
+                    number = Random.Range(0, enemiesPool.Enemies.Length);
+                }
+                break;
+            case 3:
+                number = 0;
+                break;
+        }
+        return number;
     }
 
     public void EnemyDefeated(){
