@@ -6746,7 +6746,7 @@ MonoBehaviour:
   WinPanel: {fileID: 1762992875}
   ClickTip: {fileID: 603283267}
   HitEffectPanel: {fileID: 1028313093}
-  HeroesPics:
+  Heroes:
   - {fileID: 1223836607}
   - {fileID: 1737768647}
   - {fileID: 1513246771}
@@ -6767,6 +6767,11 @@ MonoBehaviour:
   - {fileID: 1359572359}
   - {fileID: 836735878}
   - {fileID: 2104655409}
+  HeroesPics:
+  - {fileID: 385724030}
+  - {fileID: 1919677707}
+  - {fileID: 680326578}
+  - {fileID: 1223256097}
 --- !u!114 &519420035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6946,6 +6951,16 @@ MonoBehaviour:
   - IXIV
   - 80
   - 420
+  pics:
+  - {fileID: 21300000, guid: 98da3756a238b45e2853d2786e990725, type: 3}
+  - {fileID: 21300000, guid: 087f67e18bebe474caa951bcbb68b9a3, type: 3}
+  - {fileID: 21300000, guid: f14bc2d217c274fd59517ed86fc8db33, type: 3}
+  - {fileID: 21300000, guid: cfd4cc3112bc1425199ff6fb984d0d58, type: 3}
+  - {fileID: 21300000, guid: a7ff7414160314d959dc90b20e96cb68, type: 3}
+  - {fileID: 21300000, guid: d032928985a53438bb2750182523edfd, type: 3}
+  - {fileID: 21300000, guid: 4334e34389786440da84cf2c93d210c5, type: 3}
+  - {fileID: 21300000, guid: 188480ba5fae144adb355583d89e99e0, type: 3}
+  - {fileID: 21300000, guid: a555fb375a21548d4b3e14b85011daae, type: 3}
 --- !u!114 &519420041
 MonoBehaviour:
   m_ObjectHideFlags: 0
