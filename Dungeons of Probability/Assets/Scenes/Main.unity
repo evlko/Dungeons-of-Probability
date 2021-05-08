@@ -6822,19 +6822,19 @@ MonoBehaviour:
     enemySprite: {fileID: 21300000, guid: 00db46ec15d50974fbb4494ae013e17d, type: 3}
     enemyHeathPosition: 0.4
     shadowSize: 0.5
-  - enemyName: Necromant
-    enemySprite: {fileID: 21300000, guid: 201321e42030e4d44ab85fdf142fc589, type: 3}
+  - enemyName: Dog
+    enemySprite: {fileID: 21300000, guid: 7f31b330be05849e78148d57a27ab486, type: 3}
     enemyHeathPosition: 0.4
     shadowSize: 0.4
-  - enemyName: Megabrain
+  - enemyName: Necromant
     enemySprite: {fileID: 21300000, guid: c1d76ac4be56a4cf1938b66e174873dd, type: 3}
     enemyHeathPosition: 0.4
     shadowSize: 0.55
-  - enemyName: Lich
+  - enemyName: Duck
     enemySprite: {fileID: 21300000, guid: 201321e42030e4d44ab85fdf142fc589, type: 3}
     enemyHeathPosition: 0.4
     shadowSize: 0.55
-  - enemyName: Lich
+  - enemyName: Megabrain
     enemySprite: {fileID: 21300000, guid: 2af1a13a41edb4526be4d86550877790, type: 3}
     enemyHeathPosition: 0.4
     shadowSize: 0.55

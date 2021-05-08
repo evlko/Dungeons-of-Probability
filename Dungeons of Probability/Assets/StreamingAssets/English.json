@@ -97,27 +97,27 @@
             "value": "Let us begin!"
         },
         {
-            "key": "EnemyIntro_Lich",
-            "value": "Greetingsss, human! I was the mightiest of all the warriors once! Answer my questions right and I will fall."
+            "key": "EnemyIntro_Dog",
+            "value": "Greetings, wretched person! Once was I man's greatest friend, but they forgot about me! Answer my questions correctly and I will return to the owner."
         },
         {
-            "key": "EnemyTakesHit_Lich",
-            "value": "You are wise, human! The next question."
+            "key": "EnemyTakesHit_Dog",
+            "value": "You are wise, two-legged! The next question."
         },
         {
-            "key": "PlayerTakesHit_Lich",
-            "value": "Suffer the [pain], human!"
+            "key": "PlayerTakesHit_Dog",
+            "value": "Suffer the [pain], human! Feel what it was like for me to lose my dignity!"
         },
         {
-            "key": "EnemyDefeated_Lich",
+            "key": "EnemyDefeated_Dog",
             "value": "Arghhhhhh..."
         },
         {
-            "key": "PlayerDefeated_Lich",
+            "key": "PlayerDefeated_Dog",
             "value": "You have perished. Watch video AD to come back to life."
         },
         {
-            "key": "PlayerTakesFinalHit_Lich",
+            "key": "PlayerTakesFinalHit_Dog",
             "value": "Stand still! Now I small smite you down with the vicious blow!,"
         },
         {
@@ -167,6 +167,54 @@
         {
             "key": "PlayerTakesFinalHit_Megabrain",
             "value": "Lament! Close you eyes and forget your pain...,"
+        },
+        {
+            "key": "EnemyIntro_Duck",
+            "value": "Tremble, ill-fated, only miracle can save you now for my questions are from Hell itself!"
+        },
+        {
+            "key": "EnemyTakesHit_Duck",
+            "value": "Uncanny guess! Lets see how much longer Lady Luck is on your side.."
+        },
+        {
+            "key": "PlayerTakesHit_Duck",
+            "value": "Mwahaha! Vae Victis!"
+        },
+        {
+            "key": "EnemyDefeated_Duck",
+            "value": "No! No! God, no!"
+        },
+        {
+            "key": "PlayerDefeated_Duck",
+            "value": "You have perished. Watch video AD to come back to life."
+        },
+        {
+            "key": "PlayerTakesFinalHit_Duck",
+            "value": "You death will be slooooow.. QUACK"
+        },
+        {
+            "key": "EnemyIntro_Cuffs",
+            "value": "Unbelievable, but you have defeated all of my minions. Face me in the ultimate combat of brilliant minds!"
+        },
+        {
+            "key": "EnemyTakesHit_Cuffs",
+            "value": "How poignant is you wit!"
+        },
+        {
+            "key": "PlayerTakesHit_Cuffs",
+            "value": "You will pay dearly for this mistake!"
+        },
+        {
+            "key": "EnemyDefeated_Cuffs",
+            "value": "Incomprehensible! Impossible! Improbable! Aaaaa!"
+        },
+        {
+            "key": "PlayerDefeated_Cuffs",
+            "value": "You have perished. Watch video AD to come back to life."
+        },
+        {
+            "key": "PlayerTakesFinalHit_Cuffs",
+            "value": "And the happy end was sooo close.."
         },
         {
             "key": "question_text_1",
