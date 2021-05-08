@@ -56,6 +56,7 @@ public class GameManager : MonoBehaviour
             case 1:
                 number = Random.Range(1, enemiesPool.Enemies.Length);
                 PlayerPrefs.SetInt("Enemy", number);
+                Enemy.GetComponent<Animator>().SetBool("Floating", false);
                 break;
             case 2:
                 number = Random.Range(1, enemiesPool.Enemies.Length);
@@ -63,9 +64,11 @@ public class GameManager : MonoBehaviour
                 while (number == previousEnemy){
                     number = Random.Range(0, enemiesPool.Enemies.Length);
                 }
+                Enemy.GetComponent<Animator>().SetBool("Floating", false);
                 break;
             case 3:
                 number = 0;
+                Enemy.GetComponent<Animator>().SetBool("Floating", true);
                 break;
         }
         return number;
