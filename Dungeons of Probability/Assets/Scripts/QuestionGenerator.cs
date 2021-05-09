@@ -15,11 +15,11 @@ public class QuestionGenerator : MonoBehaviour
     public List<Button> answersButtons;
     public GameManager gameManager;
     public UIWriter textWriter;
+    public int randomNumber;
 
     public void GenerateQuestion()
     {
-        int randomNumber = GenerateQuestionNumber();
-        print(randomNumber);
+        randomNumber = GenerateQuestionNumber();
         List<float> usedValues = ChooseExpression(randomNumber);
         List<string> question = new List<string>();
         question.Add(ReplaceValuesInText(LocalizationManager.instance.GetLocalizedValue("question_text_" + randomNumber.ToString()), usedValues));

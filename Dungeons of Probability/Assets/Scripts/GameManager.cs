@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -32,6 +33,9 @@ public class GameManager : MonoBehaviour
         else
         {
             currentEnemyNumber = PlayerPrefs.GetInt("Enemy");
+            if (currentEnemyNumber != 0){
+                Enemy.GetComponent<Animator>().SetBool("Floating", false);
+            }
             SetEnemyData();
             if (currentEnemyHealth == 3)
             {
@@ -62,7 +66,7 @@ public class GameManager : MonoBehaviour
                 number = Random.Range(1, enemiesPool.Enemies.Length);
                 int previousEnemy = PlayerPrefs.GetInt("FirstEnemy");
                 while (number == previousEnemy){
-                    number = Random.Range(0, enemiesPool.Enemies.Length);
+                    number = Random.Range(1, enemiesPool.Enemies.Length);
                 }
                 Enemy.GetComponent<Animator>().SetBool("Floating", false);
                 break;
@@ -121,6 +125,10 @@ public class GameManager : MonoBehaviour
 
     public void IncorrectAnswer()
     {
+        Analytics.CustomEvent("incorrectAnswer", new Dictionary<string, object>
+        {
+            { "Question Number", QuestionGenerator.randomNumber },
+        });
         healths -= 1;
         UIManager.ReduceHealth(true);
         if (healths > 0)
