@@ -41,8 +41,25 @@ public class GameManager : MonoBehaviour
             {
                 UIManager.DisplayText(enemyPhrases.GetRange(0, 1));
             }
-            QuestionGenerator.GenerateQuestion();
+            
+            QuestionGenerator.GenerateQuestion(levelDifficulty());
         }
+    }
+
+    string levelDifficulty(){
+        string difficulty = "";
+        switch(level){
+            case 1:
+                difficulty = "Easy";
+                break;
+            case 2:
+                difficulty = "Normal";
+                break;
+            case 3:
+                difficulty = "Hard";
+                break;
+        }
+        return difficulty;
     }
 
     public void BeginFight(){
@@ -51,7 +68,7 @@ public class GameManager : MonoBehaviour
         SetEnemyData();
         UIManager.DisplayText(enemyPhrases.GetRange(0, 1));
         UIManager.SetHeroesStatus(true);
-        QuestionGenerator.GenerateQuestion();
+        QuestionGenerator.GenerateQuestion(levelDifficulty());
     }
 
     int enemyNumber(){
@@ -108,7 +125,7 @@ public class GameManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("EnemyHealths", currentEnemyHealth);
             UIManager.DisplayText(enemyPhrases.GetRange(1, 1));
-            QuestionGenerator.GenerateQuestion();
+            QuestionGenerator.GenerateQuestion(levelDifficulty());
         }
         else
         {
@@ -135,7 +152,7 @@ public class GameManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("Healths", healths);
             UIManager.DisplayText(enemyPhrases.GetRange(2, 1));
-            QuestionGenerator.GenerateQuestion();
+            QuestionGenerator.GenerateQuestion(levelDifficulty());
         }
         else
         {

@@ -17,9 +17,9 @@ public class QuestionGenerator : MonoBehaviour
     public UIWriter textWriter;
     public int randomNumber;
 
-    public void GenerateQuestion()
+    public void GenerateQuestion(string difficulty)
     {
-        randomNumber = GenerateQuestionNumber();
+        randomNumber = GenerateQuestionNumber(difficulty);
         List<float> usedValues = ChooseExpression(randomNumber);
         List<string> question = new List<string>();
         question.Add(ReplaceValuesInText(LocalizationManager.instance.GetLocalizedValue("question_text_" + randomNumber.ToString()), usedValues));
@@ -32,24 +32,56 @@ public class QuestionGenerator : MonoBehaviour
         AssignValuesToButtons(usedValues.GetRange(4, 3), symbol);
     }
 
-    int GenerateQuestionNumber()
+    int GenerateQuestionNumber(string difficulty)
     {
-        int[] previousQuestions = PlayerPrefsX.GetIntArray("Questions");
-        int randomNumber = Random.Range(1, 12);
-        if (previousQuestions.Sum() == 11)
+        string getArray = "Questions" + difficulty;
+        int[] previousQuestions = PlayerPrefsX.GetIntArray(getArray);
+        int[] allQuestions = new int[] {};
+ 
+        switch(difficulty){
+            case "Easy":
+                allQuestions = new int[ ] {1, 2, 3, 11};
+                break;
+            case "Normal":
+                allQuestions = new int[ ] {4, 5, 6};
+                break;
+            case "Hard":
+                allQuestions = new int[ ] {7, 8, 9, 10};
+                break;
+        }
+
+        int length = allQuestions.Length;
+
+        if (previousQuestions.Sum() == length)
         {
             for (int i = 0; i < previousQuestions.Length; i++)
             {
                 previousQuestions[i] = 0;
             }
         }
-        if (previousQuestions[randomNumber-1] == 1)
+
+        List<int> possibleQuestions = new List<int>();
+
+        for (int i = 0; i < previousQuestions.Length; i++)
         {
-            return GenerateQuestionNumber();
+            if (previousQuestions[i] == 0)
+            {
+                possibleQuestions.Add(allQuestions[i]);
+            }
         }
-        previousQuestions[randomNumber-1] = 1;
-        PlayerPrefsX.SetIntArray("Questions", previousQuestions);
-        return randomNumber;
+
+        int randomNumber = Random.Range(0, possibleQuestions.Count);
+
+        for (int i = 0; i < allQuestions.Length; i++)
+        {
+            if (allQuestions[i] == possibleQuestions[randomNumber])
+            {
+                previousQuestions[i] = 1;
+            }
+        }
+
+        PlayerPrefsX.SetIntArray(getArray, previousQuestions);
+        return possibleQuestions[randomNumber];
     }
 
     private static List<float> ChooseExpression(int num)
