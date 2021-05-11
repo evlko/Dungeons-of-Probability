@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public UIManager UIManager;
     public EnemiesPool enemiesPool;
     public QuestionGenerator QuestionGenerator;
+    public SoundManager SoundManager;
     
     void Start()
     {
@@ -138,6 +139,7 @@ public class GameManager : MonoBehaviour
         UIManager.SetHeroesStatus(true);
         UIManager.FingerTipsOff();
         ChangeAnswersButtonsStatus(false);
+        SoundManager.PlaySound(SoundManager.EnemyHit);
     }
 
     public void IncorrectAnswer()

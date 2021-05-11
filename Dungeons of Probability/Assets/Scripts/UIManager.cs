@@ -66,11 +66,13 @@ public class UIManager : MonoBehaviour
 
     public void Fail()
     {
+        gameManager.SoundManager.PlaySound(gameManager.SoundManager.Fail);
         DeathPanel.gameObject.SetActive(true);
         DeathPanel.gameObject.GetComponent<RandomPhrase>().GeneratePhrase();
     }
 
     public void Win(){
+        gameManager.SoundManager.PlaySound(gameManager.SoundManager.Win);
         List<string> texts = new List<string>();
         texts.Add(LocalizationManager.instance.GetLocalizedValue("Win_phrase"));
         UIWriter.AddToQueue(texts);
