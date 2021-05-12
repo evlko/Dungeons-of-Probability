@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = System.Random;
 
 public class MoveCamera : MonoBehaviour
 {
@@ -56,6 +57,12 @@ public class MoveCamera : MonoBehaviour
         if (moving == true){
             float step = speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, movePoint.position, step);
+            SoundManager soundManager = gameManager.SoundManager;
+            if (soundManager.Playing() == false)
+            {
+                int randomSound = UnityEngine.Random.Range(0, 10);
+                soundManager.PlaySound(soundManager.PlayerSteps[randomSound]);
+            }
         }
 
         else if (rotating == true){

@@ -96,7 +96,7 @@ public class LocalizationManager : MonoBehaviour {
 				string value = loadedData.items[i].value.Replace(">", "/color>").Replace("<", "<color=#0091EA>");
 				value = value.Replace("/c", "</c");
 				// Red color:
-				value = value.Replace("]", "</color>").Replace("[", "<color=#D50000>");
+				value = value.Replace("]", "</color>").Replace("[", "<color=#f22613>");
 				// Yellow color:
 				value = value.Replace("}", "</color>").Replace("{", "<color=#FFAB00>");
 				localizedText.Add(loadedData.items[i].key, value);

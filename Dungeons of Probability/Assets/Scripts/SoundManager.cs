@@ -8,6 +8,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip Fail;
     public AudioClip EnemyHit;
     public AudioClip PlayerHit;
+    public AudioClip[] PlayerSteps;
     AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,11 @@ public class SoundManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public bool Playing()
+    {
+        return audioSource.isPlaying;
     }
 
     public void PlaySound(AudioClip clipPlay)

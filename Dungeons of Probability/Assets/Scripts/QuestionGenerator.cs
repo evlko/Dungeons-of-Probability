@@ -194,7 +194,7 @@ public class QuestionGenerator : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             Button btn = answersButtons[i].GetComponent<Button>();
-            answersButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = values[i].ToString() + symbol;
+            answersButtons[i].GetComponentInChildren<Text>().text = values[i].ToString() + symbol;
             btn.onClick.RemoveAllListeners();
             if (values[i] == correctAnswer)
             {

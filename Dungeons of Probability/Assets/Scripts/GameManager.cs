@@ -68,7 +68,6 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("Enemy", currentEnemyNumber);
         SetEnemyData();
         UIManager.DisplayText(enemyPhrases.GetRange(0, 1));
-        UIManager.SetHeroesStatus(true);
         QuestionGenerator.GenerateQuestion(levelDifficulty());
     }
 
@@ -136,7 +135,6 @@ public class GameManager : MonoBehaviour
             nextBattle = true;
         }
         Enemy.GetComponent<Animator>().SetTrigger("Hit");
-        UIManager.SetHeroesStatus(true);
         UIManager.FingerTipsOff();
         ChangeAnswersButtonsStatus(false);
         SoundManager.PlaySound(SoundManager.EnemyHit);
@@ -160,9 +158,9 @@ public class GameManager : MonoBehaviour
         {
             UIManager.DisplayText(enemyPhrases.GetRange(4, 2));
         }
-        UIManager.SetHeroesStatus(true);
         UIManager.FingerTipsOff();
         ChangeAnswersButtonsStatus(false);
+        SoundManager.PlaySound(SoundManager.PlayerHit);
     }
 
     void GenerateEnemyPhrases()

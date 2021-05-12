@@ -69,12 +69,12 @@ public class UIWriter : MonoBehaviour
                 {
                     if (gameManager.healths == 0)
                     {
+                        gameManager.SoundManager.PlaySound(gameManager.SoundManager.Fail);
                         uiManager.Fail();
                     }
                     else
                     {
                         uiManager.ClickTip.gameObject.SetActive(false);
-                        uiManager.SetHeroesStatus(false);
                         gameManager.ChangeAnswersButtonsStatus(true);
                     }
                 }

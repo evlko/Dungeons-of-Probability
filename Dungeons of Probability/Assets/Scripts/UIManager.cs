@@ -13,7 +13,6 @@ public class UIManager : MonoBehaviour
     public Image WinPanel;
     public Image ClickTip;
     public Image HitEffectPanel;
-    public List<Image> Heroes;
     public List<Text> HeroesNames;
     public List<Text> HeroesLevels;
     public Button DialogueButton;
@@ -66,9 +65,10 @@ public class UIManager : MonoBehaviour
 
     public void Fail()
     {
-        gameManager.SoundManager.PlaySound(gameManager.SoundManager.Fail);
+        //gameManager.SoundManager.PlaySound(gameManager.SoundManager.Fail);
         DeathPanel.gameObject.SetActive(true);
         DeathPanel.gameObject.GetComponent<RandomPhrase>().GeneratePhrase();
+        StartCoroutine(FadeIn());
     }
 
     public void Win(){
@@ -77,18 +77,6 @@ public class UIManager : MonoBehaviour
         texts.Add(LocalizationManager.instance.GetLocalizedValue("Win_phrase"));
         UIWriter.AddToQueue(texts);
         UIWriter.end = true;
-    }
-
-    public void SetHeroesStatus(bool status){
-        int count = 3;
-        int level = PlayerPrefs.GetInt("Level");
-        if (level >= 3){
-            count += 1;
-        }
-        for (int i = 0; i < count; i++)
-        {
-            Heroes[i].gameObject.SetActive(status);
-        }
     }
 
     List<string> TranslatedText(List<string> keys)
@@ -123,6 +111,19 @@ public class UIManager : MonoBehaviour
     public void FingerTipsOff(){
         for (int i = 0; i < FingerTips.Length; i++){
             FingerTips[i].gameObject.SetActive(false);
+        }
+    }
+    
+    // fade from transparent to opaque
+    IEnumerator FadeIn()
+    {
+ 
+        // loop over 1 second
+        for (float i = 0; i <= 1; i += Time.deltaTime)
+        {
+            // set color with i as alpha
+            DeathPanel.color = new Color(0, 0, 0, i);
+            yield return null;
         }
     }
 }
