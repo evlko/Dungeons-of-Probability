@@ -41,6 +41,10 @@
             "value": "No"
         },
         {
+            "key": "Back",
+            "value": "Back"
+        },
+        {
             "key": "Repeat",
             "value": "Repeat"
         },
@@ -226,7 +230,7 @@
         },
         {
             "key": "question_text_2",
-            "value": "In Marshlands Value1 adventurers die by the [sword], Value2 by the [dagger] and Value3 by [stray arrows]. What is the chance to die there from the good old <melee weapon>?"
+            "value": "How many 3-rune spells may an adept warlock cast with runestones [Blood], <Ice> and {Vodka}?"
         },
         {
             "key": "question_text_3",
