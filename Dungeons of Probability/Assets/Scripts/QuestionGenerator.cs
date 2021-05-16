@@ -170,6 +170,56 @@ public class QuestionGenerator : MonoBehaviour
                 values[5] = 360;
                 values[6] = 540;
                 break;
+            case 12:
+                values[0] = Random.Range(3, 9);
+                values[4] = values[0] * values[0];
+                values[5] = values[0] + values[0];
+                values[6] = (float) Math.Round((values[0] * values[0])/2);
+                break;
+            case 13:
+                values[0] = Random.Range(3, 6);
+                values[1] = Random.Range(3, 6);
+                values[4] = (Factorial(values[0])/Factorial(2)*Factorial(values[0]-2))*values[1];
+                values[5] = values[4] * 2;
+                values[6] = (float) Math.Round(values[0]/2);
+                break;
+            case 14:
+                values[4] = 15;
+                values[5] = 30;
+                values[6] = 64;
+                break;
+            case 15:
+                values[1] = Random.Range(2, 5);
+                values[4] = Factorial(5+values[1]-1)/Factorial(4)*Factorial(values[1]);
+                values[5] = values[4] * 2;
+                values[6] = Factorial(5) / Factorial(5-values[1])*Factorial(values[1]);
+                break;
+            case 19:
+                values[4] = 2520;
+                values[5] = 2520*2;
+                values[6] = 2520+2520/2;
+                break;
+            case 20:
+                values[1] = Random.Range(3, 5);
+                values[2] = Random.Range(2, 5);
+                values[0] = values[1] + values[2];
+                values[4] = Factorial(values[0])/(Factorial(values[1]) * Factorial(values[2]));
+                values[5] = (float) Math.Round(Factorial(values[0])/Factorial(values[1]));
+                values[6] = Factorial(values[1]);
+                break;
+            case 21:
+                values[4] = 1013;
+                values[5] = 1024;
+                values[6] = 2048;
+                values[8] = 10;
+                break;
+            case 22:
+                values[0] = Random.Range(6, 10);
+                values[4] = values[0] * (values[0]-1) / 2;
+                values[5] = values[0] * values[0];
+                values[6] = values[0] * (values[0]-1);
+                break;
+
         }
 
         return values;
