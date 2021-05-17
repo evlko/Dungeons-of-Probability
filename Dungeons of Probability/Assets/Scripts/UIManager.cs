@@ -18,6 +18,7 @@ public class UIManager : MonoBehaviour
     public Button DialogueButton;
     public Transform[] FingerTips;
     public Image[] HeroesPics;
+    public List<Image> Heroes;
 
     void Start()
     {
@@ -99,6 +100,18 @@ public class UIManager : MonoBehaviour
             }
         }
         return indexes;
+    }
+
+    public void SetHeroesStatus(bool status){
+        int count = 3;
+        int level = PlayerPrefs.GetInt("Level");
+        if (level >= 3){
+            count += 1;
+        }
+        for (int i = 0; i < count; i++)
+        {
+            Heroes[i].gameObject.SetActive(status);
+        }
     }
 
     IEnumerator HitEffectPlay(float waitTime)

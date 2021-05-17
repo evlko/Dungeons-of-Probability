@@ -29,7 +29,7 @@ public class QuestionGenerator : MonoBehaviour
         {
             symbol = "%";
         }
-        AssignValuesToButtons(usedValues.GetRange(4, 3), symbol);
+        AssignValuesToButtons(usedValues.GetRange(4, 3), symbol, usedValues[8], difficulty);
     }
 
     int GenerateQuestionNumber(string difficulty)
@@ -40,13 +40,13 @@ public class QuestionGenerator : MonoBehaviour
  
         switch(difficulty){
             case "Easy":
-                allQuestions = new int[ ] {1, 2, 3, 11};
+                allQuestions = new int[ ] {1, 2, 3, 5, 6, 8, 10, 11, 12, 22};
                 break;
             case "Normal":
-                allQuestions = new int[ ] {4, 5, 6};
+                allQuestions = new int[ ] {4, 7, 9, 13, 14, 15, 20};
                 break;
             case "Hard":
-                allQuestions = new int[ ] {7, 8, 9, 10};
+                allQuestions = new int[ ] {16, 17, 18, 19, 21};
                 break;
         }
 
@@ -86,8 +86,8 @@ public class QuestionGenerator : MonoBehaviour
 
     private static List<float> ChooseExpression(int num)
     {
-        List<float> values = new List<float>(new float[]{0, 0, 0, 0, 0, 0, 0, 0});
-        // values: value1 .. value4, correctResult, incorrectResult1, incorrectResult 2, percent or not
+        List<float> values = new List<float>(new float[]{0, 0, 0, 0, 0, 0, 0, 0, 0});
+        // values: value1 .. value4, correctResult, incorrectResult1, incorrectResult 2, percent or not, incorrectResult3
         switch (num)
         {
             case 1:
@@ -163,7 +163,7 @@ public class QuestionGenerator : MonoBehaviour
                 values[4] = (float) Math.Round((values[0] / values[3] * values[2] / (values[3] - 1)) * 100, 2);
                 values[5] = (float) Math.Round((values[0] / values[3] * values[2] / values[3]) * 100, 2);
                 values[6] = values[2] + values[0];
-                values[7] = 1f;
+                values[7] = 1;
                 break;
             case 11:
                 values[4] = 720;
@@ -194,10 +194,33 @@ public class QuestionGenerator : MonoBehaviour
                 values[5] = values[4] * 2;
                 values[6] = Factorial(5) / Factorial(5-values[1])*Factorial(values[1]);
                 break;
+            case 16:
+                values[0] = Random.Range(2, 7);
+                values[1] = Random.Range(2, 8);
+                values[4] = (float) Math.Round(1/2 * values[0]/10 + 1/10 * values[1]/10 + 4/10 * 1/10) * 100;
+                values[5] = (float) Math.Round(1/2 * values[0]/10 + 1/10 * values[1]/10 + 5/10 * 1/10) * 100;
+                values[6] = 50;
+                values[7] = 1;
+                values[8] = 75;
+                break;
+            case 17:
+                values[4] = 4;
+                values[5] = 5;
+                values[6] = 20;
+                values[8] = 10;
+                break;
+            case 18:
+                values[4] = 27;
+                values[5] = 7;
+                values[6] = 20;
+                values[7] = 1;
+                values[8] = 50;
+                break;
             case 19:
                 values[4] = 2520;
                 values[5] = 2520*2;
                 values[6] = 2520+2520/2;
+                values[8] = 2520/2;
                 break;
             case 20:
                 values[1] = Random.Range(3, 5);
@@ -219,7 +242,6 @@ public class QuestionGenerator : MonoBehaviour
                 values[5] = values[0] * values[0];
                 values[6] = values[0] * (values[0]-1);
                 break;
-
         }
 
         return values;
@@ -237,11 +259,16 @@ public class QuestionGenerator : MonoBehaviour
         return (float) Math.Ceiling(number/near) * near;
     }
 
-    public void AssignValuesToButtons(List<float> values, string symbol)
+    public void AssignValuesToButtons(List<float> values, string symbol, float hardValue, string diff)
     {
         float correctAnswer = values[0];
         values = values.OrderBy(s => Random.value).ToList();
-        for (int i = 0; i < 3; i++)
+        int count = 3;
+        if (diff == "Hard"){
+            count = 4;
+            values.Add(hardValue);
+        }
+        for (int i = 0; i < count; i++)
         {
             Button btn = answersButtons[i].GetComponent<Button>();
             answersButtons[i].GetComponentInChildren<Text>().text = values[i].ToString() + symbol;

@@ -6751,6 +6751,11 @@ MonoBehaviour:
   - {fileID: 1919677707}
   - {fileID: 680326578}
   - {fileID: 1223256097}
+  Heroes:
+  - {fileID: 1223836607}
+  - {fileID: 1737768647}
+  - {fileID: 1513246771}
+  - {fileID: 1633758530}
 --- !u!114 &519420035
 MonoBehaviour:
   m_ObjectHideFlags: 0

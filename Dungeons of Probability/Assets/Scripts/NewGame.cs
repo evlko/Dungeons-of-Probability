@@ -10,9 +10,9 @@ public class NewGame : MonoBehaviour
         PlayerPrefs.SetInt("Level", 0);
         PlayerPrefs.SetInt("Healths", 3);
         PlayerPrefs.SetInt("EnemyHealths", 3);
-        PlayerPrefsX.SetIntArray("QuestionsEasy", new int[4]);
-        PlayerPrefsX.SetIntArray("QuestionsNormal", new int[3]);
-        PlayerPrefsX.SetIntArray("QuestionsHard", new int[4]);
+        PlayerPrefsX.SetIntArray("QuestionsEasy", new int[10]);
+        PlayerPrefsX.SetIntArray("QuestionsNormal", new int[7]);
+        PlayerPrefsX.SetIntArray("QuestionsHard", new int[5]);
         PlayerPrefs.SetInt("CameraPoint", 0);
         PlayerPrefsX.SetIntArray("HeroesNames", new int[4]);
         PlayerPrefsX.SetIntArray("HeroesLevels", new int[4]);

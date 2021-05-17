@@ -68,6 +68,7 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("Enemy", currentEnemyNumber);
         SetEnemyData();
         UIManager.DisplayText(enemyPhrases.GetRange(0, 1));
+        UIManager.SetHeroesStatus(true);
         QuestionGenerator.GenerateQuestion(levelDifficulty());
     }
 

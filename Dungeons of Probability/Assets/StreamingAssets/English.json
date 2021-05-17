@@ -287,31 +287,31 @@
         },
         {
             "key": "question_text_16",
-            "value": ""
+            "value": "Brom the <weaponsmith> smiths half of the <swords> in the {city of Brass}. <br>His brother Grom smiths only one tenth of <swords>. Their brother Crom smiths the rest. Brom <enchants> three of each ten <swords>, Grom - seven of ten <swords> and Crom just one of ten <swords>. What is the chance of buying an enchanted <sword> in the {city of Brass}?"
         },
         {
             "key": "question_text_17",
-            "value": "Brom the <weaponsmith> smiths half of the <swords> for the {city of Brass}. >His brother Grom the <weaponsmith> smiths only one tenth of <swords>. Their brother Crom the <weaponsmith> smiths the rest of <swords>. Brom <enchants> three of each ten <swords>, Grom - seven of ten <swords> and Crom just one of ten <swords>. What is the chance of buying an enchanted <sword> in the {city of Brass} that is made by Grom if it costs 99 coins, they look the same and you have 100 coins?"
+            "value": "Hero opens the chest. There will be an item with a 5% chance. If there is no item there, then the chance increases by 5%, otherwise it is reset to the initial value. What is the ratio of chests with and without items?"
         },
         {
             "key": "question_text_18",
-            "value": ""
+            "value": "Brom the <weaponsmith> smiths half of the <swords> in the {city of Brass}. <br>His brother Grom smiths one tenth of <swords>. Their brother Crom smiths the rest. Brom <enchants> three of each ten <swords>, Grom - seven of ten <swords> and Crom just one of ten <swords>. You managed to buy an enchanted <sword> with a 10% {discount}. What is the chance that it is made by Grom?"
         },
         {
             "key": "question_text_19",
-            "value": ""
+            "value": "There are Value1 mercenaries in the <Blackrock castle>. A pair of them is needed to deliver the message, a team of three is sufficient for getting provisions in the village and the rest should stay in the <castle>. How many ways are there to assemble such teams if mercenaries are totally expendable?"
         },
         {
             "key": "question_text_20",
-            "value": ""
+            "value": "Adventurer will be crossing the <desert> for Value1 days. He has Value2 loaths of <stale bread> and Value3 [apples]. Each day he has to eat one piece of <food> or become the <food> for [vultures]. In how many ways can he diversify his meals providing he will not be killed by scorpions?"
         },
         {
             "key": "question_text_21",
-            "value": ""
+            "value": "Ten members of Thieves Guild need to share their {loot}. They decided to assemble a {working group} to make sure everything is sort of fair. The {working group} has to have at least two members. How many various {working groups} can be assembled?"
         },
         {
             "key": "question_text_22",
-            "value": ""
+            "value": "The king announces the jousting {tournament} and Value1 noble knights are willing to take part. Each knight has to [fight] once against every other participant. How many [fights] will commoners behold if the good king makes everyone use <non-lethal spears>?"
         }
     ]
 }
