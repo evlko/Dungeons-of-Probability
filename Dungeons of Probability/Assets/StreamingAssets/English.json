@@ -271,7 +271,7 @@
         },
         {
             "key": "question_text_12",
-            "value": "In the Empty Fireplace <tavern> the group of Value1 brigands meets the rival group of other Value2 brigands. Each group ballots to choose a combatant for the <duel>.\n\nHow many pairs of brigand combatants are possible?"
+            "value": "In the Empty Fireplace <tavern> the group of Value1 brigands meets the rival group of other Value1 brigands. Each group ballots to choose a combatant for the <duel>.\n\nHow many pairs of brigand combatants are possible?"
         },
         {
             "key": "question_text_13",
@@ -287,7 +287,7 @@
         },
         {
             "key": "question_text_16",
-            "value": "Brom the <weaponsmith> smiths half of the <swords> in the {city of Brass}. <br>His brother Grom smiths only one tenth of <swords>. Their brother Crom smiths the rest. Brom <enchants> three of each ten <swords>, Grom - seven of ten <swords> and Crom just one of ten <swords>. What is the chance of buying an enchanted <sword> in the {city of Brass}?"
+            "value": "Brom the <weaponsmith> smiths half of the <swords> in the {city of Brass}. His brother Grom smiths only one tenth of <swords>. Their brother Crom smiths the rest. Brom <enchants> Value1 of 10 <swords>, Grom - Value2 of 10 <swords> and Crom just one of ten <swords>. What is the chance of buying an enchanted <sword> in the {city of Brass}?"
         },
         {
             "key": "question_text_17",
@@ -295,7 +295,7 @@
         },
         {
             "key": "question_text_18",
-            "value": "Brom the <weaponsmith> smiths half of the <swords> in the {city of Brass}. <br>His brother Grom smiths one tenth of <swords>. Their brother Crom smiths the rest. Brom <enchants> three of each ten <swords>, Grom - seven of ten <swords> and Crom just one of ten <swords>. You managed to buy an enchanted <sword> with a 10% {discount}. What is the chance that it is made by Grom?"
+            "value": "Brom the <weaponsmith> smiths half of the <swords> in the {city of Brass}. His brother Grom smiths one tenth of <swords>. Their brother Crom smiths the rest. Brom <enchants> three of each ten <swords>, Grom - seven of ten <swords> and Crom just one of ten <swords>. You managed to buy an enchanted <sword> with a 10% {discount}. What is the chance that it is made by Grom?"
         },
         {
             "key": "question_text_19",

@@ -190,15 +190,15 @@ public class QuestionGenerator : MonoBehaviour
                 break;
             case 15:
                 values[1] = Random.Range(2, 5);
-                values[4] = Factorial(5+values[1]-1)/Factorial(4)*Factorial(values[1]);
+                values[4] = (Factorial(5 + values[1] - 1))/(Factorial(4)*Factorial(values[1]));
                 values[5] = values[4] * 2;
                 values[6] = Factorial(5) / Factorial(5-values[1])*Factorial(values[1]);
                 break;
             case 16:
                 values[0] = Random.Range(2, 7);
                 values[1] = Random.Range(2, 8);
-                values[4] = (float) Math.Round(1/2 * values[0]/10 + 1/10 * values[1]/10 + 4/10 * 1/10) * 100;
-                values[5] = (float) Math.Round(1/2 * values[0]/10 + 1/10 * values[1]/10 + 5/10 * 1/10) * 100;
+                values[4] = (0.5f * values[0]/10 + 0.1f * values[1]/10 + 0.04f) * 100;
+                values[5] = (0.5f * values[0]/10 + 0.1f * values[1]/10 + 0.05f) * 100;
                 values[6] = 50;
                 values[7] = 1;
                 values[8] = 75;
@@ -217,10 +217,11 @@ public class QuestionGenerator : MonoBehaviour
                 values[8] = 50;
                 break;
             case 19:
-                values[4] = 2520;
-                values[5] = 2520*2;
-                values[6] = 2520+2520/2;
-                values[8] = 2520/2;
+                Values[0] = Random.Range(5, 10);
+                values[4] = (Factorial(Values[0]) / (Factorial(values[0] - 2) - Factorial(2))) * (Factorial(Values[0]-2) / (Factorial(values[0] - 5) - Factorial(3)));
+                values[5] = (Factorial(Values[0]) / (Factorial(values[0] - 2) - Factorial(2))) * (Factorial(Values[0]) / (Factorial(values[0] - 3) - Factorial(3)));
+                values[6] = (Factorial(Values[0]) / (Factorial(values[0] - 2) - Factorial(2))) + (Factorial(Values[0]-2) / (Factorial(values[0] - 5) - Factorial(3)));
+                values[8] = (Factorial(Values[0]) / (Factorial(values[0] - 2) - Factorial(2))) + (Factorial(Values[0]) / (Factorial(values[0] - 3) - Factorial(3)));
                 break;
             case 20:
                 values[1] = Random.Range(3, 5);

@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
             
             QuestionGenerator.GenerateQuestion(levelDifficulty());
         }
+        UIManager.SetHeroesStatus(true);
     }
 
     string levelDifficulty(){
