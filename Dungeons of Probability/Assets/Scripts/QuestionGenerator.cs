@@ -217,11 +217,11 @@ public class QuestionGenerator : MonoBehaviour
                 values[8] = 50;
                 break;
             case 19:
-                Values[0] = Random.Range(5, 10);
-                values[4] = (Factorial(Values[0]) / (Factorial(values[0] - 2) - Factorial(2))) * (Factorial(Values[0]-2) / (Factorial(values[0] - 5) - Factorial(3)));
-                values[5] = (Factorial(Values[0]) / (Factorial(values[0] - 2) - Factorial(2))) * (Factorial(Values[0]) / (Factorial(values[0] - 3) - Factorial(3)));
-                values[6] = (Factorial(Values[0]) / (Factorial(values[0] - 2) - Factorial(2))) + (Factorial(Values[0]-2) / (Factorial(values[0] - 5) - Factorial(3)));
-                values[8] = (Factorial(Values[0]) / (Factorial(values[0] - 2) - Factorial(2))) + (Factorial(Values[0]) / (Factorial(values[0] - 3) - Factorial(3)));
+                values[0] = Random.Range(5, 10);
+                values[4] = (Factorial(values[0]) / (Factorial(values[0] - 2) - Factorial(2))) * (Factorial(values[0]-2) / (Factorial(values[0] - 5) - Factorial(3)));
+                values[5] = (Factorial(values[0]) / (Factorial(values[0] - 2) - Factorial(2))) * (Factorial(values[0]) / (Factorial(values[0] - 3) - Factorial(3)));
+                values[6] = (Factorial(values[0]) / (Factorial(values[0] - 2) - Factorial(2))) + (Factorial(values[0]-2) / (Factorial(values[0] - 5) - Factorial(3)));
+                values[8] = (Factorial(values[0]) / (Factorial(values[0] - 2) - Factorial(2))) + (Factorial(values[0]) / (Factorial(values[0] - 3) - Factorial(3)));
                 break;
             case 20:
                 values[1] = Random.Range(3, 5);
