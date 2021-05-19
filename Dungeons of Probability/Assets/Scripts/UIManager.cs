@@ -19,6 +19,7 @@ public class UIManager : MonoBehaviour
     public Transform[] FingerTips;
     public Image[] HeroesPics;
     public List<Image> Heroes;
+    public Transform HintButton;
 
     void Start()
     {
@@ -127,6 +128,19 @@ public class UIManager : MonoBehaviour
         }
     }
     
+    public void ShowHint(){
+        UIWriter.StopAllCoroutines();
+        UIWriter.writing = false;
+        UIWriter.displayText.text = "";
+        if (PlayerPrefs.GetString("Language") == "Russian"){
+            Application.OpenURL("notion.so/Dungeons-of-Probability-42964f9dcf60423da19c694ea2fa9b61");
+            UIWriter.displayText.text = "Решение этой задачи можно посмотреть в <color=#FFAB00>решебнике</color>. Задача: " + gameManager.QuestionGenerator.randomNumber.ToString();
+        }
+        else{
+            UIWriter.displayText.text = "Unfortunately, we are still working on problem explanations :( Soon!";
+        }
+    }
+
     // fade from transparent to opaque
     IEnumerator FadeIn()
     {

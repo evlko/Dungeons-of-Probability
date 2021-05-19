@@ -34,5 +34,6 @@ public class LinkOpener : MonoBehaviour, IPointerClickHandler//, IPointerEnterHa
         TMP_LinkInfo linkInfo = textMessage.textInfo.linkInfo[linkIndex];
         string selectedLink = linkInfo.GetLinkID();
         Debug.Log("Open link " + selectedLink);
+        Application.OpenURL(selectedLink);
     }
 }

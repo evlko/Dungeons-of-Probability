@@ -161,6 +161,7 @@ public class GameManager : MonoBehaviour
             UIManager.DisplayText(enemyPhrases.GetRange(4, 2));
         }
         UIManager.FingerTipsOff();
+        UIManager.HintButton.gameObject.SetActive(true);
         ChangeAnswersButtonsStatus(false);
         SoundManager.PlaySound(SoundManager.PlayerHit);
     }
