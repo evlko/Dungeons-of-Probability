@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Runtime.InteropServices;
 
 public class MainMenu : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class MainMenu : MonoBehaviour
     public Sprite[] changeVolumeButtonStatuses;
     public LocalizationManager LocalizationManager;
     public SetSound setSound;
+
+    [DllImport("__Internal")]
+    private static extern void OpenNewTab(string url);
     void Awake()
     {
         LocalizationManager = (LocalizationManager)FindObjectOfType(typeof(LocalizationManager));
@@ -58,6 +62,10 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetInt("Volume", 1 - currentVolume);
         setSound.ChangeAudioListenerVolume();
         UpdateVolumeButtonStatus();
+    }
+
+    public void ExitButton(){
+        OpenNewTab("https://www.gdcuffs.com");
     }
 
     void UpdateVolumeButtonStatus(){

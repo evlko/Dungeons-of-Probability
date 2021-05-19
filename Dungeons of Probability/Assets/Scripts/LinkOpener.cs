@@ -5,10 +5,14 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine.UI;
+using System.Runtime.InteropServices;
 
 
 public class LinkOpener : MonoBehaviour, IPointerClickHandler//, IPointerEnterHandler, IPointerExitHandler, IPointerUpHandler
 {
+    [DllImport("__Internal")]
+    private static extern void OpenNewTab(string url);
+
 
     [SerializeField]
     public TextMeshProUGUI textMessage;
@@ -34,6 +38,6 @@ public class LinkOpener : MonoBehaviour, IPointerClickHandler//, IPointerEnterHa
         TMP_LinkInfo linkInfo = textMessage.textInfo.linkInfo[linkIndex];
         string selectedLink = linkInfo.GetLinkID();
         Debug.Log("Open link " + selectedLink);
-        Application.OpenURL(selectedLink);
+        OpenNewTab(selectedLink);
     }
 }

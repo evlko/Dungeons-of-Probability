@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Runtime.InteropServices;
 
 public class UIManager : MonoBehaviour
 {
@@ -20,7 +21,8 @@ public class UIManager : MonoBehaviour
     public Image[] HeroesPics;
     public List<Image> Heroes;
     public Transform HintButton;
-
+    [DllImport("__Internal")]
+    private static extern void OpenNewTab(string url);
     void Start()
     {
         gameManager = gameObject.GetComponent<GameManager>();
@@ -133,7 +135,8 @@ public class UIManager : MonoBehaviour
         UIWriter.writing = false;
         UIWriter.displayText.text = "";
         if (PlayerPrefs.GetString("Language") == "Russian"){
-            Application.OpenURL("notion.so/Dungeons-of-Probability-42964f9dcf60423da19c694ea2fa9b61");
+            //Application.ExternalEval("window.open('" + "https://www.notion.so/Dungeons-of-Probability-42964f9dcf60423da19c694ea2fa9b61" + "', '_blank')");
+            OpenNewTab("https://www.notion.so/Dungeons-of-Probability-42964f9dcf60423da19c694ea2fa9b61");
             UIWriter.displayText.text = "Решение этой задачи можно посмотреть в <color=#FFAB00>решебнике</color>. Задача: " + gameManager.QuestionGenerator.randomNumber.ToString();
         }
         else{
