@@ -16,6 +16,7 @@ public class QuestionGenerator : MonoBehaviour
     public GameManager gameManager;
     public UIWriter textWriter;
     public int randomNumber;
+    public int currentQuestion;
 
     public void GenerateQuestion(string difficulty)
     {
@@ -43,10 +44,10 @@ public class QuestionGenerator : MonoBehaviour
                 allQuestions = new int[ ] {1, 2, 3, 5, 6, 8, 10, 11, 12, 22};
                 break;
             case "Normal":
-                allQuestions = new int[ ] {4, 7, 9, 13, 14, 15, 20};
+                allQuestions = new int[ ] {4, 7, 9, 13, 14, 15, 20, 25};
                 break;
             case "Hard":
-                allQuestions = new int[ ] {16, 17, 18, 19, 21};
+                allQuestions = new int[ ] {16, 17, 18, 19, 21, 23, 24};
                 break;
         }
 
@@ -81,6 +82,7 @@ public class QuestionGenerator : MonoBehaviour
         }
 
         PlayerPrefsX.SetIntArray(getArray, previousQuestions);
+        currentQuestion = possibleQuestions[randomNumber];
         return possibleQuestions[randomNumber];
     }
 
@@ -157,8 +159,8 @@ public class QuestionGenerator : MonoBehaviour
                 break;
             case 10:
                 values[0] = Random.Range(3, 6);
-                values[1] = Random.Range(2, 7);
-                values[2] = Random.Range(2, 5);
+                values[1] = Random.Range(2, 5);
+                values[2] = Random.Range(6, 9);
                 values[3] = values[0] + values[1] + values[2];
                 values[4] = (float) Math.Round((values[0] / values[3] * values[2] / (values[3] - 1)) * 100, 2);
                 values[5] = (float) Math.Round((values[0] / values[3] * values[2] / values[3]) * 100, 2);
@@ -242,6 +244,28 @@ public class QuestionGenerator : MonoBehaviour
                 values[4] = values[0] * (values[0]-1) / 2;
                 values[5] = values[0] * values[0];
                 values[6] = values[0] * (values[0]-1);
+                break;
+            case 23:
+                values[0] = Random.Range(10, 20);
+                values[1] = Factorial(values[0]) / (Factorial(values[0]-2) * Factorial(2));
+                values[4] = (float) Math.Round(values[1] * 0.125f);
+                values[5] = (float) Math.Round(values[1] * 0.5f);
+                values[6] = values[1];
+                values[8] = values[1] * values[0];
+                break;
+            case 24:
+                values[4] = 15;
+                values[5] = 50;
+                values[6] = 30;
+                values[7] = 1;
+                values[8] = 10;
+                break;
+            case 25:
+                values[4] = 38;
+                values[5] = 39.5f;
+                values[6] = 10;
+                values[7] = 1;
+                values[5] = 13;
                 break;
         }
 

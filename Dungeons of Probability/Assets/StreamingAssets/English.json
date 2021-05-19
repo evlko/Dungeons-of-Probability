@@ -263,7 +263,7 @@
         },
         {
             "key": "question_text_10",
-            "value": "Elven archer got Value1 <oil arrows>, Value2 {poison arrows} and Value3 [fire arrows] in his quiver. He randomly picks them one by one and shoots at you. Elven archers are really fast and they never miss their target. What is the chance of being <oiled> and then [set afire]?"
+            "value": "Elven archer got Value1 <oil arrows>, Value2 {poison arrows} and Value3 [fire arrows] in his quiver. He randomly picks <two> one after another and shoots at you. Elven archers are really fast and they never miss their target. What is the chance of being <oiled> and then [set afire]?"
         },
         {
             "key": "question_text_11",
@@ -312,6 +312,18 @@
         {
             "key": "question_text_22",
             "value": "The king announces the jousting {tournament} and Value1 noble knights are willing to take part. Each knight has to [fight] once against every other participant. How many [fights] will commoners behold if the good king makes everyone use <non-lethal spears>?"
+        },
+        {
+            "key": "question_text_23",
+            "value": "There are Value1 floors in the magic castle, and every day a staircase can appear between every two floors with a 50% chance. The stairs disappear at night. How many triangles are obtained from stairs on average every day. Example of a triangle: stairs 1 to 5, 5 to 6, and 1 to 6."
+        },
+        {
+            "key": "question_text_24",
+            "value": "The Thieves Guild is recruiting members according to the following principle. The candidate must roll a d10 5 times in a row, each roll must be greater than the current roll number. What is the chance that he will end up in the guild?"
+        },
+        {
+            "key": "question_text_25",
+            "value": "The merchant with closed eyes throws 5 items into 3 chests. What is the chance that at least one will remain empty?"
         }
     ]
 }

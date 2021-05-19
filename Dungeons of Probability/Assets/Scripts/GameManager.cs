@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     public EnemiesPool enemiesPool;
     public QuestionGenerator QuestionGenerator;
     public SoundManager SoundManager;
+    public int currentQuestion;
     
     void Start()
     {
@@ -127,6 +128,7 @@ public class GameManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("EnemyHealths", currentEnemyHealth);
             UIManager.DisplayText(enemyPhrases.GetRange(1, 1));
+            currentQuestion = QuestionGenerator.currentQuestion;
             QuestionGenerator.GenerateQuestion(levelDifficulty());
         }
         else
@@ -154,6 +156,7 @@ public class GameManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("Healths", healths);
             UIManager.DisplayText(enemyPhrases.GetRange(2, 1));
+            currentQuestion = QuestionGenerator.currentQuestion;
             QuestionGenerator.GenerateQuestion(levelDifficulty());
         }
         else

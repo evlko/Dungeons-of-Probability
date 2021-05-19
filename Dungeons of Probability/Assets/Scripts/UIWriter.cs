@@ -63,6 +63,7 @@ public class UIWriter : MonoBehaviour
     {
         if (writing == false)
         {
+            uiManager.HintButton.gameObject.SetActive(false);
             if (textToWrite.Count == 0)
             {
                 if (gameManager.nextBattle == false)
