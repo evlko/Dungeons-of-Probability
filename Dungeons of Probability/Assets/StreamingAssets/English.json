@@ -283,7 +283,7 @@
         },
         {
             "key": "question_text_15",
-            "value": "Alchemist Store is offering <potions> that increase a single <attribute>: intelligence, strength, agility, wisdom or charisma by +1. In how many ways can your <attributes> be increased if you take Value2 different <potions>?"
+            "value": "Alchemist Store is offering <potions> that increase a single <attribute>: intelligence, strength, agility, wisdom or charisma by +1. In how many ways can your <attributes> be increased if you take Value2 random <potions>?"
         },
         {
             "key": "question_text_16",

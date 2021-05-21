@@ -194,7 +194,7 @@ public class QuestionGenerator : MonoBehaviour
                 values[1] = Random.Range(2, 5);
                 values[4] = (Factorial(5 + values[1] - 1))/(Factorial(4)*Factorial(values[1]));
                 values[5] = values[4] * 2;
-                values[6] = Factorial(5) / Factorial(5-values[1])*Factorial(values[1]);
+                values[6] = Factorial(5) / (Factorial(5-values[1])*Factorial(values[1]));
                 break;
             case 16:
                 values[0] = Random.Range(2, 7);
