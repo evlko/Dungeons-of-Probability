@@ -52,7 +52,7 @@ public class UIWriter : MonoBehaviour
             {
                 displayText.text += symbol;
             }
-            yield return new WaitForSeconds (0.125f);
+            yield return new WaitForSeconds (0.075f);
         }
         textToWrite.RemoveAt(0);
         uiManager.ClickTip.gameObject.SetActive(true);

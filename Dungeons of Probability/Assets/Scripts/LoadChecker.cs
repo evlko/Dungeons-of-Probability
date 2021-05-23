@@ -5,10 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class LoadChecker : MonoBehaviour
 {
+    [SerializeField]
+    private Font font;
     // Start is called before the first frame update
     void Start()
     {
-       StartCoroutine(Wait());
+        font.material.mainTexture.filterMode = FilterMode.Point;
+        StartCoroutine(Wait());
     }
     IEnumerator Wait()
     {

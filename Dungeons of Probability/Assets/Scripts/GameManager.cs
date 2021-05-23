@@ -43,8 +43,12 @@ public class GameManager : MonoBehaviour
             {
                 UIManager.DisplayText(enemyPhrases.GetRange(0, 1));
             }
-            
-            QuestionGenerator.GenerateQuestion(levelDifficulty());
+            if (PlayerPrefs.GetInt("LastQuestion") == -1){
+                QuestionGenerator.GenerateQuestion(levelDifficulty());
+            }
+            else {
+                QuestionGenerator.GenerateQuestion("Save");
+            }
         }
         UIManager.SetHeroesStatus(true);
     }

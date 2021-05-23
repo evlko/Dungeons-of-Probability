@@ -10,6 +10,7 @@ public class NewGame : MonoBehaviour
         PlayerPrefs.SetInt("Level", 0);
         PlayerPrefs.SetInt("Healths", 3);
         PlayerPrefs.SetInt("EnemyHealths", 3);
+        PlayerPrefs.SetInt("LastQuestions", -1);
         PlayerPrefsX.SetIntArray("QuestionsEasy", new int[10]);
         PlayerPrefsX.SetIntArray("QuestionsNormal", new int[8]);
         PlayerPrefsX.SetIntArray("QuestionsHard", new int[7]);

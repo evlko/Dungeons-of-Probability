@@ -20,7 +20,12 @@ public class QuestionGenerator : MonoBehaviour
 
     public void GenerateQuestion(string difficulty)
     {
-        randomNumber = GenerateQuestionNumber(difficulty);
+        if (difficulty == "Save"){
+            randomNumber = PlayerPrefs.GetInt("LastQuestion");
+        }
+        else {
+            randomNumber = GenerateQuestionNumber(difficulty);
+        }
         List<float> usedValues = ChooseExpression(randomNumber);
         List<string> question = new List<string>();
         question.Add(ReplaceValuesInText(LocalizationManager.instance.GetLocalizedValue("question_text_" + randomNumber.ToString()), usedValues));
@@ -83,6 +88,7 @@ public class QuestionGenerator : MonoBehaviour
 
         PlayerPrefsX.SetIntArray(getArray, previousQuestions);
         currentQuestion = possibleQuestions[randomNumber];
+        PlayerPrefs.SetInt("LastQuestion", possibleQuestions[randomNumber]);
         return possibleQuestions[randomNumber];
     }
 
@@ -117,7 +123,7 @@ public class QuestionGenerator : MonoBehaviour
             case 4:
                 values[0] = Random.Range(5, 10);
                 values[1] = Random.Range(10, 15);
-                values[4] = (float) Math.Round((1 - values[0] / values[1] * values[0] / values[1]) * 100, 2);
+                values[4] = (float) Math.Round((1 - (1 - values[0] / values[1]) * (1 - values[0] / values[1])) * 100, 2);
                 values[5] = (float) Math.Round(values[1] * values[0] / values[1], 2) * 10;
                 values[6] = (float) Math.Round(values[4] - Random.Range(2f, 3.5f), 2);
                 values[7] = 1f;
