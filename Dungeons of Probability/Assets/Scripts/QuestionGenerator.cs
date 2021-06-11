@@ -185,8 +185,8 @@ public class QuestionGenerator : MonoBehaviour
                 values[6] = (float) Math.Round((values[0] * values[0])/2);
                 break;
             case 13:
-                values[0] = Random.Range(3, 6);
-                values[1] = Random.Range(3, 6);
+                values[0] = Random.Range(3, 5);
+                values[1] = Random.Range(3, 7);
                 values[4] = (Factorial(values[0])/Factorial(2)*Factorial(values[0]-2))*values[1];
                 values[5] = values[4] * 2;
                 values[6] = (float) Math.Round(values[0]/2);
