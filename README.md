@@ -29,4 +29,4 @@ Clone the project and install Unity. Run the project and open the loader scene t
 ## :bulb: Possible Improvements
 1. Adding new dungeons with different topics
 2. Integration of the solutions directly into the game
-3. Adding new languages (Chinese, German, etc)
+3. Adding new languages (Chinese :cn:, German :de:, etc)
