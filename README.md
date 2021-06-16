@@ -26,6 +26,9 @@ git clone https://github.com/evlko/Dungeons-of-Probability
 ## :hammer: How to use it
 Clone the project and install Unity. Run the project and open the loader scene to play.
 
+## 🗺️ Screens Map
+![Screenshot](ScreensMap.png)
+
 ## :bulb: Possible Improvements
 1. Adding new dungeons with different topics
 2. Integration of the solutions directly into the game
