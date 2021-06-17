@@ -18,11 +18,6 @@ The game ends when you defeat 3 monsters, that is, you deal 3 damage to each of 
 * Latest JDK, SDK and NDK to build and run on Android
 * Latest xCode to build and run on iOS
 
-## :package: Installation
-```shell script
-git clone https://github.com/evlko/Dungeons-of-Probability
-```   
-
 ## :hammer: How to use it
 Clone the project and install Unity. Run the project and open the loader scene to play.
 
