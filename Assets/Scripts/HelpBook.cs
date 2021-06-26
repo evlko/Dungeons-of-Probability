@@ -28,15 +28,9 @@ public class HelpBook : MonoBehaviour
     }
 
     void SetPageSwichers(){
-        if (currentIndex == 0){
-            PageSwithchers[0].gameObject.SetActive(false);
-        }
-        else if(currentIndex == pages.Count - 1){
-            PageSwithchers[1].gameObject.SetActive(false);
-        }
-        else{
-            PageSwithchers[0].gameObject.SetActive(true);
-            PageSwithchers[1].gameObject.SetActive(true);
-        }
+        bool PreviousPageStatus = currentIndex == 0 ? false : true;
+        bool NextPageStatus = currentIndex == (pages.Count - 1) ? false : true;
+        PageSwithchers[0].gameObject.SetActive(PreviousPageStatus);
+        PageSwithchers[1].gameObject.SetActive(NextPageStatus);
     }
 }

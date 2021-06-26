@@ -135,7 +135,7 @@ public class UIManager : MonoBehaviour
         UIWriter.displayText.text = "";
         if (PlayerPrefs.GetString("Language") == "Russian"){
             //Application.ExternalEval("window.open('" + "https://www.notion.so/Dungeons-of-Probability-42964f9dcf60423da19c694ea2fa9b61" + "', '_blank')");
-            UIWriter.displayText.text = "Решение этой задачи можно посмотреть в <color=#FFAB00>решебнике</color>. Задача: " + gameManager.currentQuestion.ToString();
+            UIWriter.displayText.text = "Решение можно посмотреть в <color=#FFAB00>решебнике</color>. Задача: " + gameManager.currentQuestion.ToString() + "\nДля того, чтобы открыть решебник, нажмите на кнопку в <color=#FFAB00>верхнем правом углу</color>.";
         }
         else{
             UIWriter.displayText.text = "Unfortunately, we are still working on problem explanations :( Soon!";
