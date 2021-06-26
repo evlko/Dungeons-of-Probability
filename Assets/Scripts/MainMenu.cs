@@ -13,8 +13,6 @@ public class MainMenu : MonoBehaviour
     public LocalizationManager LocalizationManager;
     public SetSound setSound;
 
-    [DllImport("__Internal")]
-    private static extern void OpenNewTab(string url);
     void Awake()
     {
         LocalizationManager = (LocalizationManager)FindObjectOfType(typeof(LocalizationManager));
@@ -62,10 +60,6 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetInt("Volume", 1 - currentVolume);
         setSound.ChangeAudioListenerVolume();
         UpdateVolumeButtonStatus();
-    }
-
-    public void ExitButton(){
-        OpenNewTab("https://www.gdcuffs.com");
     }
 
     void UpdateVolumeButtonStatus(){
