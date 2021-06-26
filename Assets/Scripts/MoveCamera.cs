@@ -52,10 +52,10 @@ public class MoveCamera : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (moving == true){
-            float step = speed * Time.deltaTime;
+            float step = speed * Time.smoothDeltaTime;
             transform.position = Vector3.MoveTowards(transform.position, movePoint.position, step);
             SoundManager soundManager = gameManager.SoundManager;
             if (soundManager.Playing() == false)
