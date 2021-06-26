@@ -1,5 +1,5 @@
 # What is it? 
-Small game that was inspired by old dungeon crawlers and problems in probability theory. The main goal of the project is to give everyone an interactive problem book and textbook on the topic of probabilities.
+Mobile version of small game that was inspired by old dungeon crawlers and problems in probability theory. The main goal of the project is to give everyone an interactive problem book and textbook on the topic of probabilities.
 
 ## :joystick: Gameplay
 Even a baby will understand the rules of the game, which cannot be said about the tasks in it.
